@@ -1,2 +1,2 @@
-# Trabajo-final-Algoritmia-y-programaci-n
+# Trabajo-final-Algoritmia-y-programacion
 Trabajo final del curso Algoritmia y programación
