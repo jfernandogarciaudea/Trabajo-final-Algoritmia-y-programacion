@@ -1,5 +1,5 @@
 # Trabajo-final-Algoritmia-y-programacion
-<code style="color : green"> **Trabajo final del curso Algoritmia y programación** </code>
+**_Trabajo final del curso Algoritmia y programación_**
 
 **Integrantes**
 
