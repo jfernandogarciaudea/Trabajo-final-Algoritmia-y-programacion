@@ -2,12 +2,14 @@ ACTA DE ENTENDIMIENTO
 
 Fecha: 19 de septiembre de 2025
 
-Objetivo general: El objetivo del trabajo es crear un programa de consola visualmente amigable al usuario, en donde se pueda gestionar un Cinema,
-para posteriormente exportar los resultados a un archivo plano (CSV1) usando Python. Y con la realización de este trabajo se espera practicar y afianzar los conocimientos
-adquiridos en el curso de algoritmia y programación.
+Objetivo general: El objetivo de este proyecto es desarrollar una aplicación de consola en Python visualmente amigable al usuario para gestionar las operaciones de un 
+Cinema. El programa permitirá al usuario administrar datos como películas, horarios y ventas, y exportar los resultados a un archivo CSV. Adicional la creación de 
+esta aplicación servirá para practicar y consolidar los conocimientos de algoritmia y programación adquiridos en el curso.
 
 Expectativas de los miembros
 
 José Fernando García Galvis: con este proyecto espero aprender mucho de phyton pudiendo aplicar en un caso todo lo que voy a aprender en el curso de algoritmia y programación.
+
+Eidys Marcela Guzman Arrieta: Con este proyecto espero afianzar los conocimientos adquiridos en el curso, para programar y asi resolver problemas complejos mediante el uso de algoritmos
 
 
