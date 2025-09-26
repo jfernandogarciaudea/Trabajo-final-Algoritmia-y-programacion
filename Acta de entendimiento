@@ -2,7 +2,7 @@ ACTA DE ENTENDIMIENTO
 
 Fecha: 19 de septiembre de 2025
 
-Objetivo general: El objetivo del trabajo es crear un programa de consola visualmente amigable al usuario, en donde permita gestionar la gestión del Cinema UdeA,
+Objetivo general: El objetivo del trabajo es crear un programa de consola visualmente amigable al usuario, en donde se pueda gestionar un Cinema,
 para posteriormente exportar los resultados a un archivo plano (CSV1) usando Python. Y con la realización de este trabajo se espera practicar y afianzar los conocimientos
 adquiridos en el curso de algoritmia y programación.
 
