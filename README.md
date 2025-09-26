@@ -5,7 +5,7 @@
 
 Programa de consola en Python para poder gestionar usuarios, reservas, generar cobros, facturas, reportes y algo más en el Cinema de la Universidad de Antioquia, que es un espacio que ofrece a la comunidad universitaria la capacidad de asistir a cine en las inmediaciones de la ciudadela universitaria los fines de semana.
 
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/51aa292e-5e2d-4690-9a4a-d5d03dd42d1e" />
+<img width="1536" height="524" alt="image" src="https://github.com/user-attachments/assets/51aa292e-5e2d-4690-9a4a-d5d03dd42d1e" />
 
 **Integrantes**
 
