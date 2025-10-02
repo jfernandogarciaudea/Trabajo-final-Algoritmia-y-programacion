@@ -1,8 +1,8 @@
-Espesificaciones y requisitos
+**Espesificaciones y requisitos**
 
-Requisitos funcionales
+**Requisitos funcionales**
 
-Validaciones de datos de usuario
+**_Validaciones de datos de usuario_**
 
 El nombre debe tener mínimo tres letras y no puede contener números.
 
@@ -24,7 +24,7 @@ Público externo → $15.000
 
 En caso de error en estas validaciones, el sistema debe informar al usuario. Si existen múltiples errores, pueden mostrarse en lista o de manera secuencial.
 
-Gestión de reservas
+**_Gestión de reservas_**
 
 El sistema solo permitirá registrar reservas a usuarios registrados.
 
@@ -40,7 +40,7 @@ Al cancelar, un asiento reservado (“X”) vuelve a estar disponible (“O”).
 
 Si un usuario tiene varias reservas, deberá indicar cuál desea cancelar.
 
-Consulta de funciones
+**_Consulta de funciones_**
 
 El sistema mostrará en orden de día, hora y nombre las películas programadas exclusivamente para el próximo fin de semana.
 
@@ -48,7 +48,7 @@ Se incluirá la disponibilidad de asientos.
 
 Ejemplo de cartelera: Interstellar, Oppenheimer y The Imitation Game, con un total de 9 funciones y disponibilidad por función.
 
-Administración
+**_Administración_**
 
 Solo los usuarios con credenciales válidas podrán acceder al módulo de administración.
 
@@ -68,7 +68,7 @@ Lista de usuarios registrados.
 
 Usuario con mayor y menor cantidad de reservas.
 
-Requisitos no funcionales
+**Requisitos no funcionales**
 
 El sistema debe ejecutar operaciones básicas (reserva, cancelación, consulta) en un tiempo máximo de 2 segundos.
 
@@ -82,7 +82,7 @@ El sistema debe garantizar consistencia en el registro y cancelación de reserva
 
 La primera versión debe ejecutarse en consola (Python), con posibilidad de evolucionar a una interfaz gráfica o web.
 
-Criterios de aceptación
+**_Criterios de aceptación_**
 
 Si el documento contiene letras, debe rechazarse y mostrarse un mensaje de error.
 
