@@ -1,7 +1,11 @@
 ACTA DE RESPONSABILIDAD 
+
 28/09/2025
+
 Trabajo final Algoritmia y programación
+
 CINE ÁGORA
+
 Programa de consola en Python para la gestión de usuarios, reservas, cobros, facturas y reportes.
 Universidad de Antioquia
 
