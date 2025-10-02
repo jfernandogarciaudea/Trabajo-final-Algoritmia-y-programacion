@@ -1,14 +1,19 @@
-ACTA DE COLABORACION
+**ACTA DE COLABORACION**
 
-12/O9/2025	
+12/O9/2025
+
 ALGORITMIA Y PROGRAMACIÓN
 
-INTEGRANTES DEL EQUIPO                                                                                     
-José Fernando García Galvis
-Eidys Marcela Guzman Arrieta 
-Katerine Rodríguez Velez 
-Carlos Andrés Castañeda Vélez
-…
+INTEGRANTES DEL EQUIPO
+
+-José Fernando García Galvis
+
+-Eidys Marcela Guzman Arrieta
+
+-Katerine Rodríguez Velez
+
+-Carlos Andrés Castañeda Vélez
+
 Por medio de esta acta los miembros del equipo para el trabajo final de Algoritmia y Programación se comprometen a contribuir de manera activa y responsable en todas las fases del proyecto.
 
 Para garantizar un flujo de trabajo armonioso y eficiente, se establecen los siguientes acuerdos:
