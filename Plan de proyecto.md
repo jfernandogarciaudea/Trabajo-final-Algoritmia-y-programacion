@@ -10,16 +10,12 @@
 Entregable
 Documento de requisitos.
 
-
-
 **2. Diseño**	
 
 - Diseño del algoritmo (pseudocódigo / diagramas de flujo).	
 
 Entregable
 Algoritmo definido
-
-
 
 **3. Desarrollo	- Codificación de módulos:**
 
@@ -38,14 +34,10 @@ e) Reportes administrativos.
 Entregable
 Codigo
 
-
-
 **4. Pruebas	- Pruebas unitarias.**
 
 - Pruebas
 - Ajustes y correcciones
-
-
 
 **5. Documentación	- Elaboración de manual de usuario.**
 
@@ -53,8 +45,6 @@ Codigo
 
 Entregable
 Manual de usuario
-
-
 
 **Cronograma (Diagrama de Gantt)**
 
@@ -83,8 +73,6 @@ Desarrollo____________________[#####################]
 Pruebas_______________________________________________________[###]
 
 Documentación_______________________________________________________[###]
-
-
 
 **Presupuesto Estimado**
 
