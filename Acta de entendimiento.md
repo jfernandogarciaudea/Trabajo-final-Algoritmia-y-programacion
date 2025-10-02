@@ -1,4 +1,4 @@
-ACTA DE ENTENDIMIENTO
+**ACTA DE ENTENDIMIENTO**
 
 Fecha: 19 de septiembre de 2025
 
