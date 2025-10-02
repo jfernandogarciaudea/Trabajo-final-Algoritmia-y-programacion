@@ -1,8 +1,8 @@
-PLAN DE PROYECTO
+**PLAN DE PROYECTO**
 
-Actividades del Proyecto
+**_Actividades del Proyecto_**
 
-1. Planeación	
+**1. Planeación**	
 
 - Reunión inicial para definir requerimientos.
 - Elaboración de documento de especificaciones.	
@@ -10,14 +10,14 @@ Actividades del Proyecto
 Entregable
 Documento de requisitos.
 
-2. Diseño	
+**2. Diseño**	
 
 - Diseño del algoritmo (pseudocódigo / diagramas de flujo).	
 
 Entregable
 Algoritmo definido
 
-3. Desarrollo	- Codificación de módulos:
+**3. Desarrollo	- Codificación de módulos:**
 a) Gestión de usuarios
 b) Gestión de películas
 c) Reservas y cancelaciones
@@ -28,12 +28,12 @@ e) Reportes administrativos.
 Entregable
 Codigo
 
-4. Pruebas	- Pruebas unitarias.
+**4. Pruebas	- Pruebas unitarias.**
 
 - Pruebas
 - Ajustes y correcciones
 
-5. Documentación	- Elaboración de manual de usuario.
+**5. Documentación	- Elaboración de manual de usuario.**
 
 - Elaboración de manual de usuario
 
@@ -41,7 +41,7 @@ Entregable
 Manual de usuario
 
 
-Cronograma (Diagrama de Gantt)
+**Cronograma (Diagrama de Gantt)**
 
 Duración total: 8 semanas
 
@@ -69,7 +69,7 @@ Pruebas_______________________________________________________[###]
 
 Documentación_______________________________________________________[###]
 
-4. Presupuesto Estimado
+**4. Presupuesto Estimado**
 
 Mano de obra planeación      $177.938
 
