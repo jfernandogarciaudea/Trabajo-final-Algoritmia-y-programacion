@@ -10,6 +10,8 @@
 Entregable
 Documento de requisitos.
 
+
+
 **2. Diseño**	
 
 - Diseño del algoritmo (pseudocódigo / diagramas de flujo).	
@@ -17,21 +19,33 @@ Documento de requisitos.
 Entregable
 Algoritmo definido
 
+
+
 **3. Desarrollo	- Codificación de módulos:**
+
 a) Gestión de usuarios
+
 b) Gestión de películas
+
 c) Reservas y cancelaciones
+
 d) Consultas
+
 d) Facturación
+
 e) Reportes administrativos.	
 
 Entregable
 Codigo
 
+
+
 **4. Pruebas	- Pruebas unitarias.**
 
 - Pruebas
 - Ajustes y correcciones
+
+
 
 **5. Documentación	- Elaboración de manual de usuario.**
 
@@ -39,6 +53,7 @@ Codigo
 
 Entregable
 Manual de usuario
+
 
 
 **Cronograma (Diagrama de Gantt)**
@@ -55,7 +70,7 @@ Semana 7	Pruebas y ajustes
 
 Semana 8	Documentación
 
-Diagrama de Gantt 
+**Diagrama de Gantt**
 
 Semana:     1____2____3____4____5____6____7____8
 ------------------------------------------------
@@ -69,7 +84,9 @@ Pruebas_______________________________________________________[###]
 
 Documentación_______________________________________________________[###]
 
-**4. Presupuesto Estimado**
+
+
+**Presupuesto Estimado**
 
 Mano de obra planeación      $177.938
 
