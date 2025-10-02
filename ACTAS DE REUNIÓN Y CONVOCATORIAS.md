@@ -1,8 +1,11 @@
-Acta de Convocatoria a Reunión Para el Proyecto final
+**Acta de Convocatoria a Reunión Para el Proyecto final**
 
 Convocado por:  José Fernando García Galvis
+
 Fecha: 06 / 09 / 2025
+
 Dirigido a:
+
 1. Carlos Andrés Castañeda Vélez
 2. Eidys Marcela Guzman Arrieta
 3. Katerine Rodríguez Vélez
@@ -23,10 +26,12 @@ Atentamente,
 José Fernando García Galvis
 
 
-ACTA REUNIÓN DE TRABAJO 7 DE SEPTIEMBRE
+**ACTA REUNIÓN DE TRABAJO 7 DE SEPTIEMBRE**
 
 Fecha: 07 de septiembre de 2025
+
 Hora: 4:00 PM a 5:30 PM
+
 Lugar: Virtual por meet
 
 Asistentes:
@@ -66,18 +71,23 @@ Firma de los asistentes:
 4. _________
 
 
-Acta de Convocatoria a Reunión para seguimiento del proyecto
+**Acta de Convocatoria a Reunión para seguimiento del proyecto**
 
 Convocado por:  José Fernando García Galvis
+
 Fecha: 26 / 09 / 2025
+
 Dirigido a:
+
 1. Carlos Andrés Castañeda Vélez
 2. Eidys Marcela Guzman Arrieta
 3. Katerine Rodríguez Vélez
 
-Estimados Compañeros, 
+Estimados Compañeros,
+
 Por medio de la presente, se les convoca a una segunda reunión del equipo de trabajo para el proyecto final de Algoritmia y Programación.
-Esta reunión se llevará a cabo el día Sábado 27 de septiembre del 2025 a las 8:00 AM, a través de la plataforma Meet, por medio del siguiente enlace https://meet.google.com/nbp-nfvc-vxd.       
+Esta reunión se llevará a cabo el día Sábado 27 de septiembre del 2025 a las 8:00 AM, a través de la plataforma Meet, por medio del siguiente enlace https://meet.google.com/nbp-nfvc-vxd.
+
 El objetivo de esta reunión es:
 1.	Revisar el cumplimiento de los compromisos propuestos en la reunión anterior.
 2.	Revisar las actividades faltantes.
@@ -91,10 +101,12 @@ Atentamente,
 José Fernando García Galvis
 
 
-ACTA DE SEGUNDA REUNIÓN PARA PROYECTO CINE AGORA
+**ACTA DE SEGUNDA REUNIÓN PARA PROYECTO CINE AGORA**
 
 Fecha: 27 de septiembre de 2025
+
 Hora: 8:00 AM a 8:30 AM
+
 Lugar: Virtual por Meet
 
 Asistentes:
