@@ -52,12 +52,17 @@ Semana 7	Pruebas y ajustes
 Semana 8	Documentación
 
 Diagrama de Gantt 
+
 Semana:     1    2    3    4    5    6    7    8
 ------------------------------------------------
 Planeación [###]
+
 Diseño          [###]
+
 Desarrollo            [#################]
+
 Pruebas                                  [###]
+
 Documentación                                   [###]
 
 4. Presupuesto Estimado
