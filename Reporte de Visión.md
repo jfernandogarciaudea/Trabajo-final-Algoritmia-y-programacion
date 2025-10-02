@@ -1,4 +1,4 @@
-Reporte de visión
+**Reporte de visión**
 
 Nuestra visión con el proyecto Cinema Ágora es desarrollar una aplicación que no solo cumpla con los requisitos académicos, sino que también nos permita fortalecer nuestras competencias en lógica, estructuración de algoritmos 
 y programación en Python.
