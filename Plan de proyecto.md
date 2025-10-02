@@ -46,30 +46,39 @@ Cronograma (Diagrama de Gantt)
 Duración total: 8 semanas
 
 Semana 1	Planeación
+
 Semana 2	Diseño del algoritmo
+
 Semana 3 a 6	Desarrollo (codificación de módulos)
+
 Semana 7	Pruebas y ajustes
+
 Semana 8	Documentación
 
 Diagrama de Gantt 
 
 Semana:     1    2    3    4    5    6    7    8
 ------------------------------------------------
-Planeación [###]
+Planeación [#]
 
-Diseño          [###]
+Diseño          [#]
 
-Desarrollo            [#################]
+Desarrollo            [####]
 
-Pruebas                                  [###]
+Pruebas                                  [#]
 
-Documentación                                   [###]
+Documentación                                   [#]
 
 4. Presupuesto Estimado
 
 Mano de obra planeación      $177.938
+
 Mano de obra diseño          $177.938
+
 Mano de obra desarrollo      $711.750
+
 Mano de obra pruebas         $177.937
+
 Mano de obra documentación   $177.937
+
 Total estimado			       $1.423.500
