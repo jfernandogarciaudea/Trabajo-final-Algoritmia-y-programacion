@@ -57,17 +57,17 @@ Semana 8	Documentación
 
 Diagrama de Gantt 
 
-Semana:     1    2    3    4    5    6    7    8
+Semana:     1____2____3____4____5____6____7____8
 ------------------------------------------------
-Planeación [#]
+Planeación_[#]
 
-Diseño          [#]
+Diseño_________[#]
 
-Desarrollo            [####]
+Desarrollo____________[####]
 
-Pruebas                                  [#]
+Pruebas_________________________________[#]
 
-Documentación                                   [#]
+Documentación__________________________________[#]
 
 4. Presupuesto Estimado
 
