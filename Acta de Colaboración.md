@@ -30,3 +30,7 @@ Resolución de Conflictos: Abordar cualquier desacuerdo de manera constructiva, 
 
 Con esto se logrará el desarrollo del proyecto, creando un ambiente de colaboración, empatía y trabajo en equipo.
 
+Firmas
+
+<img width="681" height="364" alt="image" src="https://github.com/user-attachments/assets/afed99a2-3f2f-4548-bf38-435a1122b970" />
+
