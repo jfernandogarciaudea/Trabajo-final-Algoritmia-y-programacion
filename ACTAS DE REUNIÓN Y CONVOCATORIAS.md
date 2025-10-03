@@ -65,10 +65,9 @@ Próxima Reunión: Sin definir, se piensa programar en cuanto se terminen los co
 Cierre: Se da por concluida la reunión con la expectativa de avanzar en los compromisos establecidos y mantener una comunicación fluida para el éxito del proyecto.
 
 Firma de los asistentes:
-1. _________
-2. _________
-3. _________
-4. _________
+
+<img width="681" height="364" alt="image" src="https://github.com/user-attachments/assets/42b74e0d-6df5-4974-8a5a-1263cfb14bef" />
+
 
 
 **Acta de Convocatoria a Reunión para seguimiento del proyecto**
@@ -132,7 +131,6 @@ Próxima Reunión: La próxima reunión se acordó para el día Martes 30/09/202
 Se da por concluida la reunión con la expectativa de avanzar en los compromisos establecidos y mantener una comunicación fluida para el éxito del proyecto.
 
 Firma de los asistentes:
-1. _________
-2. _________
-3. _________
-4. _________
+
+<img width="681" height="364" alt="image" src="https://github.com/user-attachments/assets/cf9a559d-d01a-48a1-a2d2-4cbfda43d621" />
+
