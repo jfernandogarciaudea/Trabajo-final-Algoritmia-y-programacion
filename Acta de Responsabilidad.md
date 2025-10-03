@@ -51,3 +51,8 @@ El propósito de este cronograma es optimizar la gestión del tiempo y organizar
 
 Para la segunda entrega se tiene el cronograma dentro del plan del proyecto y como esta parte es mas practica, la idea es colaborar entre todos en reuniones semanales para desarrollar el algoritmo, el codigo y el manual de usuario.
 
+Firmas
+
+<img width="681" height="364" alt="image" src="https://github.com/user-attachments/assets/7cbc491a-70ee-4720-89f8-8c8d6e907448" />
+
+
