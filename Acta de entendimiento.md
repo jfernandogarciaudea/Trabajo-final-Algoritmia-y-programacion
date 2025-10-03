@@ -16,3 +16,7 @@ Katerine Rodriguez Velez: Mis expectativas con este proyecto son desarrollar hab
 desarrollo de proyectos reales.
 
 Carlos Andres Castañeda Velez: Las expectativas que tengo con este proyecto es aprender a manejar con perfeccion Python y colab, ya que la programacion es fundamental en mi carrera de ingenieria industrial.
+
+Firmas
+
+<img width="681" height="364" alt="image" src="https://github.com/user-attachments/assets/e6f4a8ba-82c7-43c4-855a-82302abdbafa" />
