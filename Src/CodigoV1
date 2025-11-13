@@ -1,6 +1,4 @@
-# Sistema de gestión - Cinema (listo para Colab)
-# Autor: Generado por ChatGPT
-# Ejecutar en Google Colab: pegar toda la celda y ejecutar
+# Sistema de gestión - Cinema Agora
 
 import sys
 import datetime
