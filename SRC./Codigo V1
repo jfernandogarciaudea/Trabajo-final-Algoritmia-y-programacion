@@ -1,0 +1,442 @@
+# Sistema de gestión - Cinema Agora
+
+import sys
+import datetime
+from collections import defaultdict, Counter
+
+# ---------- Configuraciones ----------
+FILAS = [chr(c) for c in range(ord('A'), ord('K')+1)]  # A..K (11 filas)
+COLUMNAS = [chr(c) for c in range(ord('A'), ord('K')+1)]  # A..K (11 columnas)
+NUM_FILAS = len(FILAS)
+NUM_COLUMNAS = len(COLUMNAS)
+
+PRECIOS_BOLETOS = {
+    'Estudiantes': 7500,
+    'Docentes': 10000,
+    'Administrativos': 8500,
+    'Oficiales internos': 7000,
+    'Publico externo': 15000
+}
+
+CREDENCIALES_ADMIN = {
+    'agora1': 'agora123',
+    'agora2': 'agora2025'
+}
+
+# ---------- Estructuras de datos ----------
+usuarios = {}  # doc -> {nombre, apellido, documento, tipo_vinculo}
+# funciones: id -> dict: {id, dia, hora, pelicula, sillas (dict 'A-A': 'O'/'X'), disponibles}
+funciones = {}
+reservas = {}  # id_reserva -> {doc_usuario, id_funcion, id_silla, fecha_hora, precio, activa}
+reservas_usuario = defaultdict(list)  # doc -> lista de ids de reserva
+
+# Estadísticas
+_estadisticas = {
+    'total_reservas_registradas': 0,  # número total de intentos/creaciones de reserva
+    'total_tiquetes_vendidos': 0,     # número de reservas activas
+    'total_pago_realizado': 0,        # suma de pagos (solo ventas activas)
+}
+
+_contador_reservas = 0
+_contador_funciones = 0
+
+# ---------- Utilidades ----------
+def siguiente_id_reserva():
+    global _contador_reservas
+    _contador_reservas += 1
+    return _contador_reservas
+
+def siguiente_id_funcion():
+    global _contador_funciones
+    _contador_funciones += 1
+    return _contador_funciones
+
+def fecha_actual_str():
+    return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+def nombre_valido(s):
+    s_stripped = s.strip()
+    return len(s_stripped) >= 3 and s_stripped.replace(' ', '').isalpha()
+
+def documento_valido(s):
+    s_stripped = s.strip()
+    return s_stripped.isdigit() and 3 <= len(s_stripped) <= 15
+
+def entrada_no_vacia(prompt):
+    while True:
+        val = input(prompt).strip()
+        if val:
+            return val
+        print("Entrada vacía. Intente de nuevo.")
+
+# ---------- Inicialización de funciones (con base a Ilustración 3 del trabajo) ----------
+def funciones_iniciales():
+    # crea funciones de ejemplo: id, dia, hora, pelicula, disponibles
+    muestra = [
+        (1, 'Viernes', '2pm', 'Interstellar'),
+        (1, 'Viernes', '4pm', 'Interstellar'),
+        (1, 'Viernes', '6pm', 'Interstellar'),
+        (2, 'Sabado', '2pm', 'Oppenheimer'),
+        (2, 'Sabado', '4pm', 'Oppenheimer'),
+        (2, 'Sabado', '6pm', 'Oppenheimer'),
+        (3, 'Domingo', '2pm', 'The Imitation Game'),
+        (3, 'Domingo', '4pm', 'The Imitation Game'),
+        (3, 'Domingo', '6pm', 'The Imitation Game')
+    ]
+    for idx, dia, hora, peli in muestra:
+        id_func = siguiente_id_funcion()
+        sillas = {}
+        for r in FILAS:
+            for c in COLUMNAS:
+                sillas[f"{r}{c}"] = 'O'
+        funciones[id_func] = {
+            'id': id_func,
+            'dia': dia,
+            'hora': hora,
+            'pelicula': peli,
+            'sillas': sillas,
+            'disponibles': NUM_FILAS * NUM_COLUMNAS
+        }
+
+funciones_iniciales()
+
+# ---------- Presentación y utilidades visuales ----------
+def imprimir_banner():
+    print("="*70)
+    print(" " * 18 + "CINEMA AGORA")
+    print("="*70)
+    print("Bienvenido al Cinema AGORA")
+    print("1. Registrar Usuario")
+    print("2. Registrar Reserva")
+    print("3. Cancelar Reserva")
+    print("4. Consultar Funciones Fin de Semana")
+    print("5. Administrador")
+    print("6. Salir")
+    print("="*70)
+
+def mostrar_asientos(func):
+    # cabeceras columna
+    header = "   " + " ".join(COLUMNAS)
+    print(header)
+    for r in FILAS:
+        row_display = [func['sillas'][f"{r}{c}"] for c in COLUMNAS]
+        print(f"{r}  " + " ".join(row_display))
+    print(f"Disponibles: {func['disponibles']}")
+
+def seleccionar_funcion_por_id():
+    # mostrar funciones ordenadas por dia/hora
+    items = sorted(funciones.values(), key=lambda x: (orden_dia(x['dia']), hora_a_24(x['hora'])))
+    print("\nID  Dia     Hora  Pelicula                Disponibles")
+    for f in items:
+        print(f"{f['id']:>2}  {f['dia']:<7} {f['hora']:<5} {f['pelicula'][:22]:<22} {f['disponibles']:>4}")
+    while True:
+        try:
+            choice = int(input("Ingrese el Id de la función que desea seleccionar: ").strip())
+            if choice in funciones:
+                return funciones[choice]
+            else:
+                print("Id no válido. Intente nuevamente.")
+        except Exception:
+            print("Entrada inválida. Ingrese un número.")
+
+def orden_dia(d):
+    order = {'Viernes': 1, 'Sabado': 2, 'Sábado': 2, 'Domingo': 3}
+    return order.get(d, 99)
+
+def hora_a_24(t):
+    # cosas simples como '2pm','6pm','4pm'
+    try:
+        if 'pm' in t.lower():
+            h = int(t.lower().replace('pm',''))
+            if h != 12:
+                h += 12
+        elif 'am' in t.lower():
+            h = int(t.lower().replace('am',''))
+        else:
+            h = int(t)
+        return h
+    except:
+        return 0
+
+# ---------- Funcionalidad principal ----------
+def registrar_usuario():
+    print("\n--- Registrar Usuario ---")
+    errores = []
+    nombre = entrada_no_vacia("Nombre: ").strip()
+    if not nombre_valido(nombre):
+        errores.append("Nombre inválido: mínimo 3 letras y solo letras.")
+    apellido = entrada_no_vacia("Apellido: ").strip()
+    if not nombre_valido(apellido):
+        errores.append("Apellido inválido: mínimo 3 letras y solo letras.")
+    documento = entrada_no_vacia("Documento (solo números, 3-15 dígitos): ").strip()
+    if not documento_valido(documento):
+        errores.append("Documento inválido: debe ser 3-15 dígitos, solo números.")
+    print("Tipos de vínculo disponibles y precio:")
+    for t, p in PRECIOS_BOLETOS.items():
+        print(f" - {t}: ${p}")
+    tipo = entrada_no_vacia("Tipo de vínculo (copie exactamente la opción): ").strip()
+    if tipo not in PRECIOS_BOLETOS:
+        errores.append("Tipo de vínculo inválido. Debe ser una de las opciones mostradas.")
+
+    if errores:
+        print("\nSe encontraron los siguientes errores:")
+        for e in errores:
+            print(" -", e)
+        print("Registro no completado. Intente de nuevo.\n")
+        return
+
+    if documento in usuarios:
+        print("El usuario ya está registrado. Se actualizarán datos básicos.")
+    usuarios[documento] = {
+        'nombre': nombre,
+        'apellido': apellido,
+        'documento': documento,
+        'tipo_vinculo': tipo,
+        'fecha_registro': fecha_actual_str()
+    }
+    print(f"Usuario {nombre} {apellido} registrado correctamente.\n")
+
+def interpretar_asiento(entrada):
+    # Acepta formatos: "AB" (fila A col B) ó "A B" ó "A-B"
+    s = entrada.strip().upper().replace('-', ' ').replace(',', ' ')
+    parts = s.split()
+    if len(parts) == 1 and len(parts[0]) == 2:
+        r, c = parts[0][0], parts[0][1]
+    elif len(parts) == 2:
+        r, c = parts[0], parts[1]
+    else:
+        return None
+    # aceptar columna como letra
+    if r in FILAS and c in COLUMNAS:
+        return f"{r}{c}"
+    return None
+
+def registrar_reserva():
+    global _estadisticas
+    print("\n--- Registrar Reserva ---")
+    documento = entrada_no_vacia("Ingrese su número de documento (usuario registrado): ").strip()
+    if documento not in usuarios:
+        print("Usuario no registrado. Debe registrarse antes de reservar.")
+        hacer = input("¿Desea registrarse ahora? (s/n): ").strip().lower()
+        if hacer == 's':
+            registrar_usuario()
+        return
+
+    func = seleccionar_funcion_por_id()
+    print("\nMapa de asientos (O disponible, X ocupado):")
+    mostrar_asientos(func)
+
+    asiento_input = entrada_no_vacia("Ingrese asiento (por ejemplo 'AB' o 'A B' o 'A-B', fila+col letra): ")
+    id_silla = interpretar_asiento(asiento_input)
+    if not id_silla:
+        print("Entrada de asiento inválida. Cancelando reserva.")
+        return
+
+    if id_silla not in func['sillas']:
+        print("Asiento no existe.")
+        return
+
+    if func['sillas'][id_silla] == 'X':
+        print("Asiento ya ocupado. Intente otro.")
+        return
+
+    # asignar asiento
+    func['sillas'][id_silla] = 'X'
+    func['disponibles'] -= 1
+
+    # calcular precio
+    tipo = usuarios[documento]['tipo_vinculo']
+    precio = PRECIOS_BOLETOS.get(tipo, 0)
+
+    # crear reserva
+    rid = siguiente_id_reserva()
+    reservas[rid] = {
+        'id': rid,
+        'doc_usuario': documento,
+        'id_funcion': func['id'],
+        'id_silla': id_silla,
+        'fecha_hora': fecha_actual_str(),
+        'precio': precio,
+        'activa': True
+    }
+    reservas_usuario[documento].append(rid)
+
+    # estadisticas actualizadas
+    _estadisticas['total_reservas_registradas'] += 1
+    _estadisticas['total_tiquetes_vendidos'] += 1
+    _estadisticas['total_pago_realizado'] += precio
+
+    # factura / confirmación
+    u = usuarios[documento]
+    print("\n--- CONFIRMACIÓN DE COMPRA ---")
+    print(f"Usuario: {u['nombre']} {u['apellido']}  Documento: {u['documento']}")
+    print(f"Película: {func['pelicula']}  Día: {func['dia']}  Hora: {func['hora']}")
+    print(f"Asiento: {id_silla}   Precio: ${precio}")
+    print(f"ID Reserva: {rid}  Fecha compra: {reservas[rid]['fecha_hora']}")
+    print("¡Compra realizada correctamente!\n")
+
+def cancelar_reserva():
+    global _estadisticas
+    print("\n--- Cancelar Reserva ---")
+    documento = entrada_no_vacia("Ingrese su número de documento: ").strip()
+    if documento not in usuarios:
+        print("Usuario no encontrado.")
+        return
+    res_ids = [rid for rid in reservas_usuario.get(documento, []) if reservas[rid]['activa']]
+    if not res_ids:
+        print("No tiene reservas activas. ¿Desea realizar una reserva? (s/n)")
+        if input().strip().lower() == 's':
+            registrar_reserva()
+        return
+    print("Reservas activas del usuario:")
+    for rid in res_ids:
+        r = reservas[rid]
+        f = funciones[r['id_funcion']]
+        print(f"ID {rid}: Película {f['pelicula']} {f['dia']} {f['hora']} - Asiento {r['id_silla']} - Precio ${r['precio']}")
+    try:
+        to_cancel = int(input("Ingrese el ID de la reserva que desea cancelar: ").strip())
+    except:
+        print("Entrada inválida.")
+        return
+    if to_cancel not in res_ids:
+        print("ID de reserva inválido o no corresponde a una reserva activa.")
+        return
+    # cancelar
+    r = reservas[to_cancel]
+    f = funciones[r['id_funcion']]
+    silla = r['id_silla']
+    if f['sillas'].get(silla) != 'X':
+        print("Estado inconsistente: asiento no marcado como ocupado.")
+    else:
+        f['sillas'][silla] = 'O'
+        f['disponibles'] += 1
+    r['activa'] = False
+    # estadisticas: ventas y pago
+    _estadisticas['total_tiquetes_vendidos'] = max(0, _estadisticas['total_tiquetes_vendidos'] - 1)
+    _estadisticas['total_pago_realizado'] = max(0, _estadisticas['total_pago_realizado'] - r['precio'])
+    print(f"Reserva {to_cancel} cancelada. Asiento {silla} liberado.\n")
+
+def consultar_funciones_fin_semana():
+    print("\n--- Funciones del Fin de Semana ---")
+    items = sorted(funciones.values(), key=lambda x: (orden_dia(x['dia']), hora_a_24(x['hora'])))
+    print("IdPelicula  Dia    Hora  Pelicula                 Disponibles")
+    for f in items:
+        print(f"{f['id']:>2}         {f['dia']:<6} {f['hora']:<4} {f['pelicula'][:22]:<22} {f['disponibles']:>4}")
+    print()
+
+# ---------- ADMINISTRACIÓN ----------
+def acceso_admin():
+    print("\n--- Acceso Administrador ---")
+    user = entrada_no_vacia("Usuario: ")
+    pwd = entrada_no_vacia("Contraseña: ")
+    if CREDENCIALES_ADMIN.get(user) == pwd:
+        print("Acceso concedido.")
+        menu_admin()
+    else:
+        print("Usuario o contraseña incorrectos.")
+
+def menu_admin():
+    while True:
+        print("\n--- Menú Administración ---")
+        print("1. Total de reservas registradas")
+        print("2. Total de tiquetes vendidos (activos)")
+        print("3. Total de reservas realizadas (activas + canceladas)")
+        print("4. Total pago realizado")
+        print("5. Promedio por venta diario del cine")
+        print("6. Lista de usuarios")
+        print("7. Usuario con mayor/menor cantidad de reservas")
+        print("8. Ver todas las reservas")
+        print("9. Volver al menú principal")
+        opc = entrada_no_vacia("Seleccione opción: ")
+        if opc == '1':
+            print(f"Total de reservas registradas (creadas): {_estadisticas['total_reservas_registradas']}")
+        elif opc == '2':
+            print(f"Total de tiquetes vendidos (activos): {_estadisticas['total_tiquetes_vendidos']}")
+        elif opc == '3':
+            total_created = len(reservas)
+            print(f"Total de reservas realizadas (registros creados): {total_created}")
+        elif opc == '4':
+            print(f"Total pago realizado (ventas activas): ${_estadisticas['total_pago_realizado']}")
+        elif opc == '5':
+            avg = promedio_venta_diario()
+            print(f"Promedio por venta diario del cine: ${avg:.2f}")
+        elif opc == '6':
+            print("Lista de usuarios registrados:")
+            for doc, u in usuarios.items():
+                print(f" - {u['nombre']} {u['apellido']}  Doc:{doc}  Tipo:{u['tipo_vinculo']}")
+            if not usuarios:
+                print("No hay usuarios registrados.")
+        elif opc == '7':
+            mayor, menor = estadisticas_reservas_usuario()
+            if mayor is None:
+                print("No hay reservas registradas.")
+            else:
+                print(f"Usuario con mayor reservas: {mayor[0]} -> {mayor[1]} reservas")
+                print(f"Usuario con menor reservas: {menor[0]} -> {menor[1]} reservas")
+        elif opc == '8':
+            imprimir_todas_reservas()
+        elif opc == '9':
+            break
+        else:
+            print("Opción inválida.")
+
+def promedio_venta_diario():
+    # Calcula promedio por venta diario: (total_pago_realizado)/(número de días con ventas)
+    # Como simplificación: contamos días distintos en fechas de reservas activas
+    dias = set()
+    for r in reservas.values():
+        if r['activa']:
+            ts = r['fecha_hora'][:10]
+            dias.add(ts)
+    n_dias = len(dias) if dias else 1
+    return _estadisticas['total_pago_realizado'] / n_dias
+
+def estadisticas_reservas_usuario():
+    # devuelve (mayor_nombre, cantidad), (menor_nombre, cantidad)
+    conteos = []
+    for doc, lst in reservas_usuario.items():
+        conteos.append((doc, len(lst)))
+    if not conteos:
+        return None, None
+    conteos_orden = sorted(conteos, key=lambda x: x[1], reverse=True)
+    mayor_doc, mayor_c = conteos_orden[0]
+    menor_doc, menor_c = conteos_orden[-1]
+    mayor_nombre = f"{usuarios[mayor_doc]['nombre']} {usuarios[mayor_doc]['apellido']}" if mayor_doc in usuarios else mayor_doc
+    menor_nombre = f"{usuarios[menor_doc]['nombre']} {usuarios[menor_doc]['apellido']}" if menor_doc in usuarios else menor_doc
+    return (mayor_nombre, mayor_c), (menor_nombre, menor_c)
+
+def imprimir_todas_reservas():
+    if not reservas:
+        print("No hay reservas.")
+        return
+    for rid, r in sorted(reservas.items()):
+        u = usuarios.get(r['doc_usuario'], {'nombre':'?', 'apellido':'?'})
+        f = funciones.get(r['id_funcion'], {'pelicula':'?','dia':'?','hora':'?'})
+        estado = 'Activa' if r['activa'] else 'Cancelada'
+        print(f"ID {rid}: {u['nombre']} {u['apellido']} - {f['pelicula']} {f['dia']} {f['hora']} - Asiento {r['id_silla']} - ${r['precio']} - {estado}")
+
+# ---------- Programa principal ----------
+def ciclo_principal():
+    while True:
+        imprimir_banner()
+        op = entrada_no_vacia("Seleccione una opción (1-6): ")
+        if op == '1':
+            registrar_usuario()
+        elif op == '2':
+            registrar_reserva()
+        elif op == '3':
+            cancelar_reserva()
+        elif op == '4':
+            consultar_funciones_fin_semana()
+        elif op == '5':
+            acceso_admin()
+        elif op == '6':
+            print("Gracias por usar el sistema. Hasta luego.")
+            break
+        else:
+            print("Opción inválida. Intente de nuevo.")
+
+# Iniciar sistema
+if __name__ == "__main__":
+    print("Iniciando sistema Cinema Agora (ejecución en consola).")
+    ciclo_principal()
