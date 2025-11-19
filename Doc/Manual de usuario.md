@@ -27,20 +27,22 @@ El sistema funciona mediante un menú interactivo que guía al usuario paso a pa
 Al ejecutar el archivo principal, el sistema muestra el siguiente menú:
 
 ==============================================
-CINEMA AGORA
+
+**CINEMA AGORA**
 Bienvenido al Cinema AGORA
 
-Registrar Usuario
+1. Registrar Usuario
 
-Registrar Reserva
+2. Registrar Reserva
 
-Cancelar Reserva
+3. Cancelar Reserva
 
-Consultar Funciones Fin de Semana
+4. Consultar Funciones Fin de Semana
 
-Administrador
+5. Administrador
 
-Salir
+6. Salir
+
 ==============================================
 
 El usuario debe elegir una opción entre **1 y 6**.
@@ -89,9 +91,9 @@ Proceso:
    - **X** → asiento ocupado
 4. Ingresar asiento  
    - Formatos válidos:  
-     - `AB`  
-     - `A B`  
-     - `A-B`
+     - AB  
+     - A B  
+     - A-B
 5. Confirmación final  
    El sistema muestra:  
    - Usuario  
