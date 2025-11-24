@@ -1,0 +1,680 @@
+# Sistema de gestión - Cinema Agora
+
+import datetime
+from collections import defaultdict, Counter
+
+# ---------- Configuraciones ----------
+filas = [chr(c) for c in range(ord('A'), ord('K')+1)]  # A..K (11 filas)
+columnas = [chr(c) for c in range(ord('A'), ord('K')+1)]  # A..K (11 columnas)
+Num_filas = len(filas)
+Num_columnas = len(columnas)
+
+Precio_boletos = {
+    'Estudiantes': 7500,
+    'Docentes': 10000,
+    'Administrativos': 8500,
+    'Oficiales internos': 7000,
+    'Publico externo': 15000
+}
+
+credenciales_admin = {
+    'agora1': 'agora123',
+    'agora2': 'agora2025'
+}
+
+#--------- Estructuras de datos-----------
+usuarios = {}
+# documento -> {nombre, apellido, tipo_vinculo}
+funciones = {}
+# funciones: id -> dict: {id, dia, hora, pelicula,
+#                         sillas (dict 'A-A': 'O'/'X') disponibles}
+reservaciones = {}
+# id_reserva -> {doc_usuario, id_funciones,
+#id_sillas, fecha_reserva, precio, activa}
+reservas_usuarios = defaultdict(list)
+# documento -> lista de las reservas
+
+# ----------Estadísticas------------
+estadisticas = {
+    'total_reservas_registradas': 0,
+    # número de veces que alguien intentó reservar
+    # Reservas creadas en total (activas + canceladas)
+    'total_tiquetes_vendidos': 0,     # cuenta el numero de reservas activas
+    'total_pago_realizado': 0,        # suma de pagos (solo ventas activas)
+}
+
+contador_reservas = 0
+contador_funciones = 0
+
+# ---------Funciones--------------
+def siguiente_reservacion():
+  """
+  Incrementa en 1 el contador global de reservas
+  y devuelve la informacion de la nueva reserva.
+  """
+  global contador_reservas
+  contador_reservas += 1
+  return contador_reservas
+
+
+def siguiente_funcion():
+  """
+  Incrementa en 1 el contador global de funciones
+  y retorna la informacion de la nueva funcion.
+  """
+  global contador_funciones
+  contador_funciones += 1
+  return contador_funciones
+
+
+def fecha_actual():
+  """
+  Crea el programador para obtener la fecha y la hora actuales del sistema
+  y las devuelve como una cadena de  texto.
+ """
+  return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+
+def validar_nombre(s):
+  """
+  Valida que los nombres contengan al menos 3 caracteres y solo permita letras
+  devolviendo si el nombre es válido, o no.
+  """
+  s_stripped = s.strip()
+  return len(s_stripped) >= 3 and s_stripped.replace(' ', '').isalpha()
+
+def validar_documento(s):
+  """
+  Valida que el documento solo contenga entre 3 y 15 caracteres
+  y solo se admitan numeros ademas de devolver si el documento es válido, o no.
+  """
+  s_stripped = s.strip()
+  return s_stripped.isdigit() and 3 <= len(s_stripped) <= 15
+
+
+def validar_entrada(prompt):
+  """ Verifica si la entrada está vacía."""
+  while True:
+        validar = input(prompt).strip()
+        if validar:
+            return validar
+        print("Entrada vacía. Intente de nuevo.")
+
+# ------- Inicialización de funciones-------
+def funciones_iniciales():
+   """
+  Inicializa las funciones del fin de semana generando sus IDs, creando el mapa
+  de sillas disponibles y guardando cada función en el diccionario global.
+   """
+   programacion = [
+      (1, 'Viernes', '2pm', 'Interstellar'),
+      (1, 'Viernes', '4pm', 'Interstellar'),
+      (1, 'Viernes', '6pm', 'Interstellar'),
+      (2, 'Sabado', '2pm', 'Oppenheimer'),
+      (2, 'Sabado', '4pm', 'Oppenheimer'),
+      (2, 'Sabado', '6pm', 'Oppenheimer'),
+      (3, 'Domingo', '2pm', 'The Imitation Game'),
+      (3, 'Domingo', '4pm', 'The Imitation Game'),
+      (3, 'Domingo', '6pm', 'The Imitation Game')
+  ]
+   for idx, dia, hora, peli in programacion:
+        id_funciones = siguiente_funcion()
+
+        sillas = {f"{r}{c}": 'O' for r in filas for c in columnas}
+
+        funciones[id_funciones] = {
+            'id': id_funciones,
+            'dia': dia,
+            'hora': hora,
+            'pelicula': peli,
+            'sillas': sillas,
+            'disponibles': Num_filas * Num_columnas
+        }
+
+funciones_iniciales()
+
+# ---------- Presentación ----------
+def mostrar_Menu():
+  """
+  Imprime el menú principal del sistema Cinema Ágora en formato de consola.
+  """
+  print("="*70)
+  print(" " * 18 + "CINEMA AGORA")
+  print("="*70)
+  print("Bienvenido al Cinema AGORA")
+  print("1. Registrar Usuario")
+  print("2. Registrar Reserva")
+  print("3. Cancelar Reserva")
+  print("4. Consultar Funciones Fin de Semana")
+  print("5. Administrador")
+  print("6. Salir")
+  print("="*70)
+
+def mostrar_asientos(datos_funcion):
+    """
+    Muestra en pantalla el mapa de asientos de una función de cine,
+    usando 'O' para disponible y 'X' para ocupado.
+    """
+
+    print("\n      " + "  ".join(columnas))
+    print("    " + "-" * (len(columnas) * 3))
+
+    for f in filas:
+       lista_asientos = [datos_funcion['sillas'][f"{f}{c}"] for c in columnas]
+       asientos = "  ".join(lista_asientos)
+       print(f"{f} |  {asientos}")
+
+    print("    " + "-" * (len(columnas) * 3))
+    print(f"\nAsientos disponibles: {datos_funcion['disponibles']}\n")
+
+
+def seleccionar_funcion_por_id():
+  """
+  Muestra todas las funciones de cine disponibles, ordenadas por día y hora,
+    y permite al usuario seleccionar una función ingresando su ID. ademas de
+    retornar el diccionario con la funcion seleccionada.
+    """
+
+  lista_ordenada = sorted(funciones.values(),
+        key=lambda x: (ordenar_dias(x['dia']), convertir_a_24h(x['hora']))
+    )
+
+  print("\nID  | Día     | Hora  | Película              | Disponible")
+  print("----+---------+-------+------------------------+------")
+
+  for fun in lista_ordenada:
+    print(
+        f"{fun['id']:>2}  | "
+        f"{fun['dia']:<7} | "
+        f"{fun['hora']:<5} | "
+        f"{fun['pelicula'][:22]:<22} | "
+        f"{fun['disponibles']:>4}"
+    )
+  while True:
+        try:
+            s = input("Ingrese el Id de la función que desea seleccionar: ")
+            sel = s.strip()
+            seleccion = int(sel)
+            if seleccion in funciones:
+                return funciones[seleccion]
+            else:
+                print("Id no válido. Intente nuevamente.")
+        except :
+            print("Entrada inválida. Ingrese un número.")
+
+
+def ordenar_dias(d):
+  """
+  Ordena los dias de las funciones en un orden específico y
+  retorna un numero que representa el orden del dia,
+   ademas si el dia no esta definido, retorna el numero 99 .
+  """
+  orden = {'Viernes': 1, 'Sabado': 2, 'Sábado': 2, 'Domingo': 3}
+  return orden.get(d, 99)
+
+
+def convertir_a_24h(t):
+  """ Convierte una hora en formato de 12 horas a formato de 24 horas."""
+  try:
+        if 'pm' in t.lower():
+            hora = int(t.lower().replace('pm',''))
+            if hora != 12:
+                hora += 12
+        elif 'am' in t.lower():
+            hora = int(t.lower().replace('am',''))
+        else:
+            hora = int(t)
+        return hora
+  except:
+        return 0
+
+# ---------- funciones principales ----------
+def registrar_usuario():
+  """
+  Registra un nuevo usuario en el sistema solicitando nombre, apellido,
+  documento y tipo de vínculo. Realiza validación de cada campo
+  y almacena los datos en el diccionario global usuarios.
+  """
+  print("\n--- Registrar Usuario ---")
+  errores = [] # Guarda en una lista los errores encontrados en la validacion
+
+  # Nombre y Apellido
+  nombre = input("Nombre: ").strip()
+  nombre = nombre.title()
+  if not validar_nombre(nombre):
+        errores.append("Nombre inválido: mínimo 3 letras y solo letras.")
+
+  apellido = input("Apellido: ").strip()
+  apellido = apellido.title()
+  if not validar_nombre(apellido):
+        errores.append("Apellido inválido: mínimo 3 letras y solo letras.")
+
+  # Documento
+  doc = input("Documento (solo números, 3-15 dígitos): ")
+  documento = doc.strip()
+  if not validar_documento(documento):
+     errores.append("Documento inválido: debe ser 3-15 dígitos, solo números.")
+  elif documento in usuarios:
+    print("\n⚠️ ALERTA: Este número de documento ya está registrado.")
+    print("No se puede registrar de nuevo.\n")
+    return
+
+  # Vinculos
+  print("\nTipos de vínculo disponibles:")
+  vinculos = list(Precio_boletos.items())
+
+  for i, (tipo, precio) in enumerate(vinculos, start=1):
+        print(f"{i}. {tipo} - ${precio}")
+
+  op = input("\nSeleccione el número del vínculo: ").strip()
+
+  if not op.isdigit() or not (1 <= int(op) <= len(vinculos)):
+        errores.append("Vínculo inválido. Debe seleccionar un número del menú.")
+  else:
+        indice = int(op) - 1
+        tipo_vinculo, precio_seleccionado = vinculos[indice]
+        print(f"\nPara'{tipo_vinculo}' el precio es: ${precio_seleccionado}")
+
+  # Errores
+  if errores:
+        print("\nSe encontraron los siguientes errores:")
+        for e in errores:
+            print(" -", e)
+        print("Registro no completado. Intente de nuevo.\n")
+        return
+
+  # Guardar datos
+  if documento in usuarios:
+        print("El usuario ya está registrado. Se actualizarán datos básicos.")
+  usuarios[documento] = {
+        'nombre': nombre,
+        'apellido': apellido,
+        'documento': documento,
+        'tipo_vinculo': tipo_vinculo,
+        'fecha_registro': fecha_actual()
+    }
+  print(f"Usuario {nombre} {apellido} registrado correctamente.\n")
+
+def interpretacion_asientos(sillas):
+    """
+    Interpreta un asiento ingresado por el usuario en diferentes formatos
+    ("AB", "A B", "A-B", "aB") y lo convierte al formato estándar "FilaColumna"
+    como "AB". Si el asiento no es válido, devuelve None.
+    """
+    sillas = sillas.strip().upper().replace('-', ' ').replace(',', ' ')
+    datos_asiento = sillas.split()
+
+    if len(datos_asiento) == 1 and len(datos_asiento[0]) == 2:
+        f, c = datos_asiento[0][0], datos_asiento[0][1]
+
+    elif len(datos_asiento) == 2:
+        f, c = datos_asiento[0], datos_asiento[1]
+    else:
+        return None
+
+    if f in filas and c in columnas:
+        return f"{f}{c}"
+    return None
+
+
+def registrar_reservacion():
+   """
+    Registra una nueva reservación solicitando el usuario, la función
+    y la silla. Valida todos los datos ingresados, verifica disponibilidad,
+    calcula el precio y almacena la reservación en el sistema.
+    """
+   # Validar existencia del usuario
+   global estadisticas
+   print("\n--- Registrar Reserva ---")
+   doc = input("Ingrese su número de documento (usuario registrado): ")
+   documento = doc.strip()
+
+   if documento not in usuarios:
+        print("Usuario no registrado. Debe registrarse antes de reservar.")
+        registro = input("¿Desea registrarse ahora? (si/no): ").strip().lower()
+        if registro == 'si':
+            registrar_usuario()
+        return
+# Reservar asiento
+   funcion = seleccionar_funcion_por_id()
+   print("\nMapa de asientos (O disponible, X ocupado):")
+   mostrar_asientos(funcion)
+
+   while True:
+      asiento = input("Ingrese la fila_columna del asiento que desea reservar: ")
+      id_silla = interpretacion_asientos(asiento)
+
+      if not id_silla:
+          print("Entrada de asiento inválida. Cancelando reserva.")
+          return
+
+      # Revisar existencia del asiento
+      if id_silla not in funcion['sillas']:
+          print("Asiento no existe.")
+          return
+
+      # Revisar disponibilidad
+      if funcion['sillas'][id_silla] == 'X':
+          print("Asiento ya ocupado. Intente otro.")
+          continue
+
+      # Reservar
+      funcion['sillas'][id_silla] = 'X'
+      funcion['disponibles'] -= 1
+
+      print(f"\n Asiento {id_silla} reservado con éxito.\n")
+      mostrar_asientos(funcion)
+      break
+
+    # calcular precio
+   vinculo = usuarios[documento]['tipo_vinculo']
+   precio = Precio_boletos.get(vinculo, 0)
+
+    # crear reserva
+   id_reserva = siguiente_reservacion()
+   reservaciones[id_reserva] = {
+        'id': id_reserva,
+        'usuario_doc': documento,
+        'funcion_id': funcion['id'],
+        'id_silla': id_silla,
+        'fecha_reserva': fecha_actual(),
+        'Valor_boleto': precio,
+        'activa': True
+    }
+   reservas_usuarios[documento].append(id_reserva)
+
+  # Estadisticas actualizadas
+   estadisticas['total_reservas_registradas'] += 1
+   estadisticas['total_tiquetes_vendidos'] += 1
+   estadisticas['total_pago_realizado'] += precio
+
+  # Facturacion del boleto
+   usuario = usuarios[documento]
+
+   print("\n***** BOLETOS CINE AGORA *****")
+   print(f"Cliente: {usuario['nombre']} {usuario['apellido']}")
+   print(f"Doc:     {usuario['documento']}")
+   print("---------------------------")
+   print(f"Película: {funcion['pelicula']}")
+   print(f"Día:      {funcion['dia']}")
+   print(f"Hora:     {funcion['hora']}")
+   print(f"Asiento:  {id_silla}")
+   print(f"Precio:   ${precio}")
+   print("---------------------------")
+   print(f"Reserva: {id_reserva}")
+   print(f"Fecha:   {reservaciones[id_reserva]['fecha_reserva']}")
+   print("¡Gracias por su compra!")
+   print("***************************\n")
+
+
+def cancelar_reservacion():
+  """
+  Cancela una reserva activa del usuario, libera el
+  asiento y actualiza estadísticas.
+  """
+  # Verificar existencia del usuario
+  global estadisticas
+  print("\n--- Cancelar Reserva ---")
+  documento = input("Ingrese su número de documento: ").strip()
+  if documento not in usuarios:
+        print("Usuario no encontrado.")
+        return
+
+  # Buscar reservas activas del usuario
+  ids_reservas = [
+      id_reserva
+      for id_reserva in reservas_usuarios.get(documento, [])
+      if reservaciones[id_reserva]['activa']
+    ]
+  if not ids_reservas:
+      print("No tiene reservas activas. ¿Desea realizar una reserva? (si/no)")
+      if input().strip().lower() == 'si':
+            registrar_reservacion()
+      return
+
+   # Mostrar reservas
+  print("Reservas activas del usuario:")
+  for id_reserva in ids_reservas:
+      res = reservaciones[id_reserva]
+      func = funciones[res['funcion_id']]
+
+      print(
+          f"ID {id_reserva} | {func['pelicula']} | {func['dia']} {func['hora']}"
+          f" | Asiento {res['id_silla']} | Precio ${res['Valor_boleto']}")
+
+  # Solicitar ID de reserva a cancelar
+  try:
+        cnl = input("Ingrese ID o # de la reserva que desea cancelar: ").strip()
+        cancelar = int(cnl)
+  except:
+        print("Entrada inválida.")
+        return
+  if cancelar not in ids_reservas:
+        print("ID de reserva inválido o no corresponde a una reserva activa.")
+        return
+  # Cancelar reservacion
+  r = reservaciones[cancelar]
+  f = funciones[r['funcion_id']]
+  silla = r['id_silla']
+
+  if f['sillas'].get(silla) != 'X':
+        print("Estado inconsistente: asiento no marcado como ocupado.")
+  else:
+        f['sillas'][silla] = 'O'
+        f['disponibles'] += 1
+  r['activa'] = False
+
+ # Estadisticas: ventas y pago
+  nuevo_total_tiquetes = estadisticas['total_tiquetes_vendidos'] - 1
+  estadisticas['total_tiquetes_vendidos'] = max(0, nuevo_total_tiquetes)
+
+  nuevo_total_pago = estadisticas['total_pago_realizado'] - r['Valor_boleto']
+  estadisticas['total_pago_realizado'] = max(0, nuevo_total_pago)
+
+  # Cancelacion exitosa
+  print(f"Reserva {cancelar} cancelada. Asiento {silla} liberado.\n")
+
+
+def consultar_funciones_fin_semana():
+  """
+  Muestra las funciones de cine del fin de semana, ordenadas por día y hora.
+  """
+  print("\n--- Funciones del Fin de Semana ---")
+
+  lista_ordenada = sorted(funciones.values(),
+        key=lambda x: (ordenar_dias(x['dia']), convertir_a_24h(x['hora'])))
+
+  print("IdPelicula  Dia    Hora  Pelicula         Disponibles")
+  for f in lista_ordenada:
+
+      print(f"{f['id']:<4} {f['dia']:<8} {f['hora']:<8}"
+          f"{f['pelicula'][:25]:<25} {f['disponibles']:>5}")
+  print()
+
+# ---------- ADMINISTRACIÓN ----------
+def acceso_admin():
+  """
+  Verifica las credenciales del administrador y permite el acceso al menú admin
+  """
+  print("\n--- Acceso Administrador ---")
+  usuario = input("Usuario: ")
+  contraseña = input("Contraseña: ")
+  if credenciales_admin.get(usuario) == contraseña:
+     print("Acceso concedido.")
+     menu_admin()
+  else:
+      print("Usuario o contraseña incorrectos.")
+
+def menu_admin():
+  """
+  Muestra el menú de administración y permite consultar estadísticas,
+    usuarios y todas las reservas del sistema.
+  """
+  while True:
+        print("\n--- Menú Administración ---")
+        print("1. Total de reservas registradas")
+        print("2. Total de tiquetes vendidos (activos)")
+        print("3. Total de reservas realizadas (activas + canceladas)")
+        print("4. Total pago realizado")
+        print("5. Promedio por venta diario del cine")
+        print("6. Lista de usuarios")
+        print("7. Usuario con mayor/menor cantidad de reservas")
+        print("8. Ver todas las reservas")
+        print("9. Volver al menú principal")
+
+        opcion = input("Seleccione opción: ")
+        if opcion == '1':
+            print(
+                f"Total de reservas registradas (creadas):"
+                f"{estadisticas['total_reservas_registradas']}"
+            )
+        elif opcion == '2':
+            print(
+                f"Total de tiquetes vendidos (activos):"
+                f" {estadisticas['total_tiquetes_vendidos']}"
+            )
+        elif opcion == '3':
+            total_reservas = len(reservaciones)
+            print(
+                f"Total de reservas realizadas (registros creados):"
+                f" {total_reservas}"
+            )
+        elif opcion == '4':
+            print(
+                f"Total pago realizado (ventas activas):"
+                f" ${estadisticas['total_pago_realizado']}"
+            )
+        elif opcion == '5':
+            promedio = promedio_venta_diario()
+            print(f"Promedio por venta diario del cine: ${promedio:.2f}")
+
+        elif opcion == '6':
+            print("Lista de usuarios registrados:")
+            for doc, usuario in usuarios.items():
+                print(f" - {usuario['nombre']}  {usuario['apellido']} | "
+                      f"Doc:{doc} | vinculo:{usuario['tipo_vinculo']}"
+                )
+            if not usuarios:
+                print("No hay usuarios registrados.")
+
+        elif opcion == '7':
+            mayor, menor = estadisticas_reservas_usuario()
+            if mayor is None:
+                print("No hay reservas registradas.")
+            else:
+                print(
+                    f"Usuario con mayor reservas:"
+                    f" {mayor[0]} -> {mayor[1]} reservas"
+                )
+                print(
+                    f"Usuario con menor reservas:"
+                    f" {menor[0]} -> {menor[1]} reservas"
+                )
+        elif opcion == '8':
+            mostrar_todas_las_reservaciones()
+        elif opcion == '9':
+            break
+        else:
+            print("Opción inválida.")
+
+def promedio_venta_diario():
+   """
+   Calcula el promedio de ventas por día considerando solo reservas activas.
+    Cuenta los días únicos con ventas y divide el total recaudado entre ellos.
+    """
+   dias = set()
+   for r in reservaciones.values():
+        if r['activa']:
+            fecha = r['fecha_reserva'][:10]
+            dias.add(fecha)
+   numero_dias = len(dias) if dias else 1
+   return estadisticas['total_pago_realizado'] / numero_dias
+
+def estadisticas_reservas_usuario():
+  """
+  Retorna el usuario con más reservas y el que tiene menos, con sus cantidades.
+  """
+   # Crear lista (doc, cantidad_reservas)
+  conteos = [(doc, len(lst)) for doc, lst in reservas_usuarios.items()]
+
+  if not conteos:
+        return None, None
+
+   # Ordenar por cantidad de reservas (descendente)
+  conteos.sort(key=lambda x: x[1], reverse=True)
+
+  doc_mayor, mayor_r = conteos[0]
+  doc_menor, menor_r = conteos[-1]
+
+ # Nombre del usuario con mayor y menor reserva
+  nombre_mayor_r = (
+        f"{usuarios[doc_mayor]['nombre']} "
+        f"{usuarios[doc_mayor]['apellido']}"
+        if doc_mayor in usuarios
+        else doc_mayor
+    )
+  nombre_menor_r = (
+        f"{usuarios[doc_menor]['nombre']} "
+        f"{usuarios[doc_menor]['apellido']}"
+        if doc_menor in usuarios
+        else doc_menor
+    )
+  return (nombre_mayor_r, mayor_r), (nombre_menor_r, menor_r)
+
+def mostrar_todas_las_reservaciones():
+  """Muestra todas las reservas del sistema con sus datos principales."""
+
+  if not reservaciones:
+        print("No hay reservas.")
+        return
+  for id_reserva, r in sorted(reservaciones.items()):
+
+        # # Datos del usuario
+        usuario = usuarios.get(
+                        r['usuario_doc'],
+                        {'nombre':'?', 'apellido':'?'}
+                  )
+        # Datos de la funcion
+        funcion = funciones.get(
+                      r['funcion_id'],
+                      {'pelicula':'?','dia':'?','hora':'?'}
+                  )
+        # Estado de la reserva
+        estado = 'Activa' if r['activa'] else 'Cancelada'
+
+        # Reservaciones
+        print(
+            f"ID {id_reserva} | {usuario['nombre']} {usuario['apellido']} | "
+            f"{funcion['pelicula']} | {funcion['dia']} {funcion['hora']} | "
+            f"Asiento {r['id_silla']} | ${r['Valor_boleto']} | {estado}"
+        )
+
+# ---------- Programa principal ----------
+def ciclo_menu_principal():
+  """
+  Ejecuta el menú principal del sistema y gestiona las opciones del usuario.
+  """
+  while True:
+        mostrar_Menu()
+        opcion = input("Seleccione una opción (1-6): ")
+        if opcion == '1':
+            registrar_usuario()
+        elif opcion == '2':
+            registrar_reservacion()
+        elif opcion == '3':
+            cancelar_reservacion()
+        elif opcion == '4':
+            consultar_funciones_fin_semana()
+        elif opcion == '5':
+            acceso_admin()
+        elif opcion == '6':
+            print("Gracias por usar el sistema. Hasta luego.")
+            break
+        else:
+            print("opción inválida. Intente de nuevo.")
+
+# Iniciar sistema
+if __name__ == "__main__":
+    print("\n=== Sistema Cinema Ágora ===")
+    print("Iniciando ejecución en consola...\n")
+ciclo_menu_principal()
