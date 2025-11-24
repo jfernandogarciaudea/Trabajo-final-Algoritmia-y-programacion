@@ -72,7 +72,7 @@ El sistema solicitará:
 
 Si algún dato no cumple los requisitos, el sistema mostrará errores y pedirá repetir el proceso.
 
-Si el usuario ya existe, el sistema **actualiza sus datos**.
+Si el documento del usuario ya existe, el sistema **no permitira registrarlo de nuevo**.
 
 ---
 
