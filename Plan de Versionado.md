@@ -6,7 +6,7 @@ En cuanto se logro construir todo el código y se evidenció que funcionaba corr
 
 ***VERSIÓN 2***
 
-A la versión 1 se le aplico cambios para cumplir con P8, modificando formato, agregando comentarios y agregando docstrings, además se cambio la forma de mostrar las sillas disponibles y ocupadas para la reserva
+A la versión 1 se le aplico cambios para cumplir con PEP8, modificando formato, agregando comentarios y agregando docstrings, además se cambio la forma de mostrar las sillas disponibles y ocupadas para la reserva
 
 ***VERSIÓN 3***
 
