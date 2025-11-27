@@ -138,9 +138,13 @@ Firma de los asistentes:
 ACTA DE REUNIÓN – EXPLICACIÓN DETALLADA DEL CÓDIGO DEL SISTEMA “CINE ÁGORA”
 
 Fecha: 25 de octubre de 2025
+
 Hora: 8:00 AM – 1:00 pm
+
 Modalidad: Reunión virtual por Google Meet
+
 Proyecto: Sistema de gestión de cine “Cine Ágora”
+
 Convoca: José Fernando García Galvis
 
 Asistentes:
