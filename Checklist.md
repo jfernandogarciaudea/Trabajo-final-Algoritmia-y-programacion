@@ -20,8 +20,8 @@ Especificación de requisitos - **Listo**
 
 Plan de proyecto - **Listo**	
 
-Plan de versionado	
+Plan de versionado - **Listo**	
 
-Algoritmo	
+Algoritmo - **Listo**		
 
-Manual de usuario	
+Manual de usuario - **Listo**		
