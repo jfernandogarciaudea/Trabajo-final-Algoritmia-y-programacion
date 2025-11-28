@@ -239,3 +239,130 @@ Tema central: Revisión del avance del código y pruebas básicas de funcionamie
 
 FIRMA DE LOS ASISTENTES
 <img width="681" height="364" alt="image" src="https://github.com/user-attachments/assets/cf9a559d-d01a-48a1-a2d2-4cbfda43d621" />
+
+
+ACTA DE REUNIÓN – DESARROLLO Y CONSOLIDACIÓN DEL SISTEMA “CINEMA ÁGORA”
+
+Fecha: 20 de octubre de 2025
+Hora: 8:00 AM – 10:30 AM
+Modalidad: Reunión virtual por Google Meet
+Lugar: Sala virtual del curso
+Proyecto: Sistema de gestión – Cinema Ágora
+Convocada por: José Fernando García Galvis
+
+ASISTENTES
+Nombre	Participación
+José Fernando García Galvis	Coordinador del proyecto
+Carlos Andrés Castañeda Vélez	Implementación y pruebas
+Eidys Marcela Guzmán	Redacción de informe
+Katerine Rodríguez Vélez	Diseño de diagrama de flujo
+OBJETIVO DE LA REUNIÓN
+
+La presente reunión tuvo como finalidad consolidar la estructura operativa del sistema Cinema Ágora, un programa de gestión de reservas de cine desarrollado en Python. Se avanzó en la definición de los módulos que forman el sistema, la organización del flujo de trabajo, el modelo de interacción con el usuario y la preparación de los elementos necesarios para entregar el proyecto formalmente.
+
+Además, se dejó el sistema funcional en consola, permitiendo registrar usuarios, realizar reservas, cancelar reservas, consultar funciones del fin de semana y acceder a estadísticas administrativas.
+
+DESARROLLO DE LA REUNIÓN
+1. Revisión de avances anteriores
+
+Se verificaron los avances obtenidos en reuniones pasadas y se confirmó que:
+
+El sistema ya permite registrar usuarios con sus datos básicos.
+
+La carga de funciones del fin de semana quedó completamente implementada.
+
+El menú principal está operativo y facilita la navegación del usuario.
+
+El programa está estructurado por módulos, lo que facilita su comprensión y mantenimiento.
+
+2. Organización del sistema Cinema Ágora
+
+Se decidió estructurar oficialmente el sistema en secciones claras, de la siguiente manera:
+
+Configuraciones iniciales.
+
+Definición de estructuras de datos.
+
+Funciones auxiliares.
+
+Registro de usuarios y reservas.
+
+Cancelación de reservas.
+
+Visualización de funciones.
+
+Panel de administración.
+
+Programa principal con menú.
+
+Esta organización permitirá documentar el proyecto de forma profesional y facilitar su explicación ante el docente o jurado evaluador.
+
+3. Funcionalidades que quedaron operativas
+
+Durante la sesión se lograron integrar y confirmar las siguientes funcionalidades del sistema:
+
+✔ Registro de usuario
+Se ingresan los datos básicos y se valida la información antes de guardarla.
+
+✔ Reserva de boletos de cine
+El sistema muestra un mapa de asientos, registra reservas y actualiza los cupos disponibles.
+
+✔ Cancelación de reservas
+Las reservas activas pueden ser anuladas y el asiento vuelve a quedar libre.
+
+✔ Mostrar funciones del fin de semana
+Las películas están clasificadas por día y hora para una mejor visualización del cliente.
+
+✔ Módulo de administración
+Se puede acceder mediante Usuario y Contraseña para consultar:
+
+Total de reservas realizadas
+
+Total de tiquetes vendidos
+
+Total recaudado en ventas activas
+
+Promedio de venta por día
+
+Lista de usuarios registrados
+
+Usuario con mayor y menor número de reservas
+
+Historial completo de reservas
+
+✔ Menú principal 100% funcional
+Se dejó completamente operativo el menú de navegación en consola, lo que permite la interacción fluida con el sistema.
+
+ACUERDOS Y TAREAS ASIGNADAS
+Integrante	Responsabilidad	Fecha límite
+Carlos Andrés Castañeda	Realizar pruebas funcionales completas	23/10/2025
+Eidys Marcela Guzmán	Redactar informe final en Word	23/10/2025
+Katerine Rodríguez	Elaborar diagrama de flujo del sistema	24/10/2025
+José Fernando García Galvis	Revisar y validar el trabajo final	25/10/2025
+
+Se acordó que los resultados de estas tareas serán compartidos antes de la próxima reunión para consolidarlos en un único documento final.
+
+CONCLUSIONES DE LA REUNIÓN
+
+Se logró avanzar de manera significativa en la consolidación del sistema Cinema Ágora.
+
+El programa se encuentra en condiciones de ser probado por usuarios simulados.
+
+El sistema posee una estructura adecuada para ser presentado como proyecto final.
+
+El trabajo en equipo permitió cumplir los objetivos planteados en cada fase.
+
+Se dejó el programa ordenado, entendible y listo para ser documentado.
+
+PRÓXIMA REUNIÓN
+
+Fecha: 25 de octubre de 2025
+Tema principal:
+
+Pruebas finales del sistema
+
+Entrega del informe en Word
+
+Preparación de sustentación (exposición en clase)
+
+FIRMA DE LOS PARTICIPANTES
