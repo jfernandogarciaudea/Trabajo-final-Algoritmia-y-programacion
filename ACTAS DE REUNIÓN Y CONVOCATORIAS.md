@@ -153,8 +153,6 @@ ASISTENTES
 
   2.Eidys Marcela Guzmán Arrieta
 
-  3.Katerine Rodríguez Vélez
-
   4.José Fernando García Galvis 
 
 OBJETIVO GENERAL DE LA REUNIÓN
@@ -173,7 +171,7 @@ OBJETIVOS ESPECÍFICOS
 DESARROLLO DE LA REUNIÓN
   1. Revisión del acta anterior
   
-  Se confirmó el cumplimiento de los compromisos pactados: los integrantes entregaron el diseño preliminar del sistema, el análisis de     requerimientos y la propuesta de funcionamiento general del software. Con ello, se dio luz verde para iniciar el proceso de programación   formal.
+  Se confirmó el cumplimiento de los compromisos pactados: los integrantes entregaron el diseño preliminar del sistema, el análisis de requerimientos y la propuesta de funcionamiento general del software. Con ello, se dio luz verde para iniciar el proceso de programación   formal.
 
 2. Confirmación del nombre del proyecto
 
@@ -226,10 +224,11 @@ PRÓXIMA TAREA
   Mejoras visuales del menú principal en consola.
   Construcción del módulo de estadísticas y administrador.
   Pruebas preliminares del sistema.
-
+  Además, se acordó que cada miembro del equipo debía analizar e intentar avanzar en el código por su cuenta, para luego compartir sus ideas en la próxima reunión.
+  
 CONCLUSIÓN
 
-  Se dio por iniciada oficialmente la fase de programación del sistema “Cine Ágora”. El proyecto ya cuenta con una estructura base sólida y un primer código funcional que servirá como punto de partida para la implementación completa del sistema. Se acordó mantener comunicación constante en caso de errores o actualizaciones necesarias.
+  Se dio por iniciada oficialmente la fase de programación del sistema “Cine Ágora”. El proyecto ya cuenta con una estructura base sólida que servirá como punto de partida para la implementación completa del sistema. Se acordó mantener comunicación constante en caso de errores o actualizaciones necesarias.
 
 PRÓXIMA REUNIÓN
 
@@ -249,8 +248,6 @@ Hora: 8:00 AM – 11:30 AM
 
 Modalidad: Reunión virtual por Google Meet
 
-Lugar: Sala virtual del curso
-
 Proyecto: Sistema de gestión – Cinema Ágora
 
 Convocada por: José Fernando García Galvis
@@ -266,7 +263,6 @@ Carlos Andrés Castañeda Vélez
 
 Eidys Marcela Guzmán
 
-Katerine Rodríguez Vélez
 
 OBJETIVO DE LA REUNIÓN
 
@@ -331,23 +327,13 @@ Se dejó en funcionamiento un menú principal completamente operativo que permit
 
 ACUERDOS Y RESPONSABILIDADES
 
-Se distribuyeron tareas concretas para continuar el desarrollo del proyecto:
-
-Carlos Andrés Castañeda Vélez realizará las pruebas funcionales completas del sistema y validará su funcionamiento general.
-
-Eidys Marcela Guzmán se encargará de redactar el informe final en Word con los apartados requeridos.
-
-Katerine Rodríguez Vélez trabajará en el diseño del diagrama de flujo del sistema.
-
-José Fernando García Galvis revisará el proyecto completo y validará el material final para la entrega académica.
-
-Se acordó que los avances serán compartidos antes de la próxima reunión para unificar toda la información en un solo documento definitivo.
+Se acordó que cada integrante debe revisar el código en busca de posibles errores. Los errores que se identifiquen serán corregidos y posteriormente compartidos con los demás miembros del equipo.
 
 CONCLUSIONES
 
 Durante esta reunión se evidenció un avance significativo en el desarrollo del sistema “Cinema Ágora”. El programa ya puede ser utilizado por un usuario simulado y se encuentra casi listo para ser sustentado formalmente. La organización del equipo y la comunicación constante han permitido el cumplimiento de cada una de las fases planteadas desde el inicio del proyecto.
 
-El sistema posee una estructura adecuada, ordenada y clara, lo que facilita la documentación y la presentación final del trabajo académico. Se quedó en condiciones de iniciar la etapa de pruebas, elaboración del informe y preparación de la sustentación.
+El sistema posee una estructura adecuada, ordenada y clara, lo que facilita la documentación y la presentación final del trabajo académico. Se quedó en condiciones de iniciar la etapa de pruebas.
 
 PRÓXIMA REUNIÓN
 
@@ -360,18 +346,16 @@ Realización de pruebas finales del sistema.
 FIRMA DE LOS PARTICIPANTES
 
 
-
-
 <img width="681" height="364" alt="image" src="https://github.com/user-attachments/assets/42b74e0d-6df5-4974-8a5a-1263cfb14bef" />
 
 
+La reunión fue pospuesta para el día 20/11/2025 debido a la disponibilidad de los integrantes del equipo, y esta nueva fecha permitirá que todos participen y presenten sus avances.
 
 **ACTA DE REUNIÓN – PRESENTACIÓN DEL CÓDIGO DEL SISTEMA “CINEMA ÁGORA”**
 
 Fecha: 20 de Noviembre de 2025
 Hora: 8:00 AM – 10:30 AM
 Modalidad: Reunión virtual por Google Meet
-Lugar: Sala virtual del curso
 Proyecto: Sistema de gestión – Cinema Ágora
 Convocada por: José Fernando García Galvis
 
@@ -385,11 +369,9 @@ Carlos Andrés Castañeda Vélez
 
 Eidys Marcela Guzmán Arrieta
 
-Katerine Rodríguez Vélez
-
 OBJETIVO DE LA REUNIÓN
 
-La presente reunión tuvo como finalidad presentar formalmente el código final del sistema de gestión “Cinema Ágora”, revisando su estructura general, los módulos que lo componen, su funcionamiento en consola y la forma en que se integran las distintas partes del programa.
+La reunión tuvo como finalidad presentar formalmente el código final del sistema de gestión “Cinema Ágora”, revisando su estructura general, los módulos que lo componen, su funcionamiento en consola y la forma en que se integran las distintas partes del programa.
 
 Se buscó validar que el código cumpla con los requerimientos definidos para el proyecto, que su estructura sea entendible, modular y acorde con los objetivos académicos del curso, y que se encuentre en condiciones de ser entregado y sustentado ante el docente.
 
@@ -514,23 +496,26 @@ ACUERDOS Y COMPROMISOS
 
 Como resultado de la presentación del código, se acordó lo siguiente:
 
-Mantener la versión actual del sistema como código base definitivo para la entrega del proyecto.
+Hacer una version adicinal del sistema con las mejoras implementadas y con esto dejar el código completamente organizado para la entrega del proyecto.
 
 Cada integrante conservará una copia actualizada del programa para la sustentación.
 
-Eidys Marcela Guzmán incorporará la descripción general del sistema y de sus módulos en el informe escrito.
+Eidys Marcela Guzmán incorporará las normas PEP 8 al código con el fin de mejorar su legibilidad y consistencia. Esta modificación constituirá la segunda versión del proyecto.
 
-Katerine Rodríguez elaborará un diagrama de flujo que represente el funcionamiento global del sistema desde la perspectiva del usuario.
+Por su parte, Carlos Andrés Castañeda y José Fernando García continuarán realizando pruebas adicionales para identificar posibles errores menores antes de la entrega final. Los errores que se detecten serán verificados y corregidos en la tercera versión del proyecto.
 
-Carlos Andrés Castañeda continuará realizando pruebas adicionales para identificar posibles errores menores antes de la entrega final.
+Las mejoras implementadas serán compartidas a través de GitHub, y las explicaciones necesarias se proporcionarán por medio de WhatsApp. Por lo tanto, no será necesario programar una reunión adicional.
 
 CONCLUSIONES
 
-Se concluyó que el sistema de gestión “Cinema Ágora” se encuentra en una etapa avanzada y estable, con un código funcional, organizado y coherente. La presentación permitió al equipo tener una visión global del programa y dejar constancia del trabajo realizado en cada uno de sus módulos.
+Se concluyó que el sistema de gestión “Cinema Ágora” se encuentra en su etapa final, con un código funcional, organizado y funcional. La presentación permitió al equipo tener una visión global del programa y dejar constancia del trabajo realizado en cada uno de sus módulos.
 
-El proyecto está listo para entrar en su fase final de documentación y preparación de la sustentación oral ante el docente.
+El proyecto se encuentra en su fase final; por lo tanto, una vez implementadas las últimas mejoras, el trabajo estará completamente listo para su entrega y sustentación.
 
 FIRMA DE LOS PARTICIPANTES
 
 
 <img width="681" height="364" alt="image" src="https://github.com/user-attachments/assets/42b74e0d-6df5-4974-8a5a-1263cfb14bef" />
+
+
+El trabajo quedó oficialmente finalizado el día 28/11/2025 en horas de la mañana, luego de realizarse las últimas revisiones. A partir de esa fecha, el código y su funcionamiento quedaron completamente definidos y operativos, quedando listo para su entrega y sustentación.
