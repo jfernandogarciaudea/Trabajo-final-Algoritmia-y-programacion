@@ -87,3 +87,5 @@ Mano de obra pruebas         $177.937
 Mano de obra documentación   $177.937
 
 Total estimado			       $1.423.500
+
+El presupuesto y cronograma se basa en una dedicación de tiempo de ocho semanas, concentrando la mayor parte del tiempo en el desarrollo, y con una dedicación en horas de aproximadamente 5 horas a la semana para cada miembro del equipo.
