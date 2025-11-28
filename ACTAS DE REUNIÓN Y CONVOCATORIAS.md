@@ -241,39 +241,37 @@ FIRMA DE LOS ASISTENTES
 <img width="681" height="364" alt="image" src="https://github.com/user-attachments/assets/cf9a559d-d01a-48a1-a2d2-4cbfda43d621" />
 
 
-ACTA DE REUNIÓN – DESARROLLO Y CONSOLIDACIÓN DEL SISTEMA “CINEMA ÁGORA”
+**ACTA DE REUNIÓN – DESARROLLO Y CONSOLIDACIÓN DEL SISTEMA “CINEMA ÁGORA”**
 
-Fecha: 20 de octubre de 2025
-Hora: 8:00 AM – 10:30 AM
+Fecha: 8 de Noviembre de 2025
+Hora: 8:00 AM – 11:30 AM
 Modalidad: Reunión virtual por Google Meet
 Lugar: Sala virtual del curso
 Proyecto: Sistema de gestión – Cinema Ágora
 Convocada por: José Fernando García Galvis
 
 ASISTENTES
-Nombre	Participación
-José Fernando García Galvis	Coordinador del proyecto
-Carlos Andrés Castañeda Vélez	Implementación y pruebas
-Eidys Marcela Guzmán	Redacción de informe
-Katerine Rodríguez Vélez	Diseño de diagrama de flujo
+
+  1.José Fernando García Galvis	
+  2.Carlos Andrés Castañeda Vélez
+  3.Eidys Marcela Guzmán
+  4.Katerine Rodríguez Vélez	
+
 OBJETIVO DE LA REUNIÓN
 
-La presente reunión tuvo como finalidad consolidar la estructura operativa del sistema Cinema Ágora, un programa de gestión de reservas de cine desarrollado en Python. Se avanzó en la definición de los módulos que forman el sistema, la organización del flujo de trabajo, el modelo de interacción con el usuario y la preparación de los elementos necesarios para entregar el proyecto formalmente.
+  La presente reunión tuvo como finalidad consolidar la estructura operativa del sistema Cinema Ágora, un programa de gestión de reservas de cine desarrollado en Python. Se avanzó en la definición de los módulos que forman el sistema, la organización del flujo de trabajo, el modelo de interacción con el usuario y la preparación de los elementos necesarios para entregar el proyecto formalmente.
 
-Además, se dejó el sistema funcional en consola, permitiendo registrar usuarios, realizar reservas, cancelar reservas, consultar funciones del fin de semana y acceder a estadísticas administrativas.
+  Además, se dejó el sistema funcional en consola, permitiendo registrar usuarios, realizar reservas, cancelar reservas, consultar funciones del fin de semana y acceder a estadísticas administrativas.
 
 DESARROLLO DE LA REUNIÓN
+
 1. Revisión de avances anteriores
 
 Se verificaron los avances obtenidos en reuniones pasadas y se confirmó que:
-
-El sistema ya permite registrar usuarios con sus datos básicos.
-
-La carga de funciones del fin de semana quedó completamente implementada.
-
-El menú principal está operativo y facilita la navegación del usuario.
-
-El programa está estructurado por módulos, lo que facilita su comprensión y mantenimiento.
+-El sistema ya permite registrar usuarios con sus datos básicos.
+-La carga de funciones del fin de semana quedó completamente implementada.
+-El menú principal está operativo y facilita la navegación del usuario.
+-El programa está estructurado por módulos, lo que facilita su comprensión y mantenimiento.
 
 2. Organización del sistema Cinema Ágora
 
