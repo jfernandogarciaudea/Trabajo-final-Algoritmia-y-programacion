@@ -134,7 +134,9 @@ Firma de los asistentes:
 
 <img width="681" height="364" alt="image" src="https://github.com/user-attachments/assets/cf9a559d-d01a-48a1-a2d2-4cbfda43d621" />
 
-ACTA DE REUNIÓN – INICIO DE DESARROLLO DEL SISTEMA “CINE ÁGORA”
+
+
+**ACTA DE REUNIÓN – INICIO DE DESARROLLO DEL SISTEMA “CINE ÁGORA”**
 
 Fecha: 25 de octubre de 2025
 Hora: 08:00 AM – 1:00 PM
@@ -147,94 +149,87 @@ Proyecto: Sistema de gestión – Cine Ágora
 
 ASISTENTES
 
-Carlos Andrés Castañeda Vélez
+  Carlos Andrés Castañeda Vélez
 
-Eidys Marcela Guzmán Arrieta
+  Eidys Marcela Guzmán Arrieta
 
-Katerine Rodríguez Vélez
+  Katerine Rodríguez Vélez
 
-José Fernando García Galvis (coordinador general del proyecto)
+  José Fernando García Galvis (coordinador general del proyecto)
 
 OBJETIVO GENERAL DE LA REUNIÓN
 
-Dar inicio formal a la fase de programación del sistema “Cine Ágora”, con base en los requerimientos definidos en reuniones anteriores. Se buscó estructurar el código inicial, definir los módulos principales del sistema, distribuir responsabilidades entre los integrantes y establecer un cronograma de trabajo para el desarrollo del proyecto en el lenguaje Python.
+  Dar inicio formal a la fase de programación del sistema “Cine Ágora”, con base en los requerimientos definidos en reuniones anteriores.   Se buscó estructurar el código inicial, definir los módulos principales del sistema, distribuir responsabilidades entre los integrantes   y establecer un cronograma de trabajo para el desarrollo del proyecto en el lenguaje Python.
 
 OBJETIVOS ESPECÍFICOS
 
-Determinar la organización del archivo principal del programa.
-Establecer variables, estructuras de datos y funciones necesarias.
-Definir el menú principal del sistema y su estructura visual en consola.
-Especificar los procesos de registro de usuarios y reservas.
-Identificar los primeros fragmentos de código necesarios para iniciar la ejecución.
-Asignar tareas para continuar la programación en próximas sesiones.
+  Determinar la organización del archivo principal del programa.
+  Establecer variables, estructuras de datos y funciones necesarias.
+  Definir el menú principal del sistema y su estructura visual en consola.
+  Especificar los procesos de registro de usuarios y reservas.
+  Identificar los primeros fragmentos de código necesarios para iniciar la ejecución.
+  Asignar tareas para continuar la programación en próximas sesiones.
 
 DESARROLLO DE LA REUNIÓN
-1. Revisión del acta anterior
-
-Se confirmó el cumplimiento de los compromisos pactados: los integrantes entregaron el diseño preliminar del sistema, el análisis de requerimientos y la propuesta de funcionamiento general del software. Con ello, se dio luz verde para iniciar el proceso de programación formal.
+  1. Revisión del acta anterior
+  
+  Se confirmó el cumplimiento de los compromisos pactados: los integrantes entregaron el diseño preliminar del sistema, el análisis de     requerimientos y la propuesta de funcionamiento general del software. Con ello, se dio luz verde para iniciar el proceso de programación   formal.
 
 2. Confirmación del nombre del proyecto
 
-Se ratificó el nombre oficial:
+  Se ratificó el nombre oficial:
 
-Sistema de Gestión – “Cine Ágora”
+  Sistema de Gestión – “Cine Ágora”
 
-Este nombre se conservará para todas las entregas escritas y para la presentación final del proyecto.
+  Este nombre se conservará para todas las entregas escritas y para la presentación final del proyecto.
 
 3. Estructuración del código principal
 
-Se acordó que el sistema se dividirá por módulos y etapas. Durante la sesión se trabajó en:
-Configuración inicial de filas y columnas para generar el mapa de asientos.
-Diccionarios base para guardar precios de boletos según el tipo de usuario.
-Estructuras de datos para almacenar usuarios, reservas, funciones y estadísticas del sistema.
-Generación automática de identificadores (IDs) para cada reserva y para cada función de cine.
-Creación del menú principal en consola usando instrucciones como print() e interacción con el usuario mediante input().
+  Se acordó que el sistema se dividirá por módulos y etapas. Durante la sesión se trabajó en:
+  Configuración inicial de filas y columnas para generar el mapa de asientos.
+  Diccionarios base para guardar precios de boletos según el tipo de usuario.
+  Estructuras de datos para almacenar usuarios, reservas, funciones y estadísticas del sistema.
+  Generación automática de identificadores (IDs) para cada reserva y para cada función de cine.
+  Creación del menú principal en consola usando instrucciones como print() e interacción con el usuario mediante input().
 
 4. Funciones definidas para el sistema
 
-Durante la reunión se aprobó la creación de las siguientes funciones esenciales:
-Registro de usuario
-Registro de reserva
-Cancelación de reserva
-Consulta de funciones del fin de semana
-Acceso administrador con estadísticas
-Se mencionaron, entre los códigos utilizados, estructuras como:
-def para definir funciones
-input() para recibir datos del usuario
-print() para mostrar información de manera organizada
-if – elif – else para la toma de decisiones
-Ciclos como for y while para recorrer listas o mantener el menú activo
-Diccionarios para registrar la información del sistema
-(No se profundizó en la explicación de cada código, ya que este proceso será documentado en fases posteriores del proyecto.)
+  Durante la reunión se aprobó la creación de las siguientes funciones esenciales:
+  Registro de usuario
+  Registro de reserva
+  Cancelación de reserva
+  Consulta de funciones del fin de semana
+  Acceso administrador con estadísticas
+  Se mencionaron, entre los códigos utilizados, estructuras como:
+  def para definir funciones
+  input() para recibir datos del usuario
+  print() para mostrar información de manera organizada
+  if – elif – else para la toma de decisiones
+  Ciclos como for y while para recorrer listas o mantener el menú activo
+  Diccionarios para registrar la información del sistema
+  (No se profundizó en la explicación de cada código, ya que este proceso será documentado en fases posteriores del proyecto.)
 
 5. Avance técnico alcanzado en la sesión
 
-Durante la reunión se implementaron las primeras bases funcionales del sistema, dejando operativos los siguientes elementos:
-Variables iniciales y listas de filas/columnas.
-Configuración de precios y vínculos del cine.
-Funciones auxiliares para futuras validaciones.
-Primer diseño del menú visual del sistema.
-Carga de funciones con películas reales y horarios asignados.
-Esto permitió dejar un esqueleto de programa listo para continuar con su desarrollo en las siguientes sesiones.
+  Durante la reunión se implementaron las primeras bases funcionales del sistema, dejando operativos los siguientes elementos:
+  Variables iniciales y listas de filas/columnas.
+  Configuración de precios y vínculos del cine.
+  Funciones auxiliares para futuras validaciones.
+  Primer diseño del menú visual del sistema.
+  Carga de funciones con películas reales y horarios asignados.
+  Esto permitió dejar un esqueleto de programa listo para continuar con su desarrollo en las siguientes sesiones.
 
 PRÓXIMA TAREA
 
-Se acordó que la próxima fase debe concentrarse en:
-Validaciones de datos ingresados por el usuario.
-Mejoras visuales del menú principal en consola.
-Construcción del módulo de estadísticas y administrador.
-Pruebas preliminares del sistema.
-
-RESPONSABILIDADES ASIGNADAS
-Integrante	Tarea asignada	Fecha límite
-Carlos Andrés	Programar funciones de registro	30/10/2025
-Eidys Marcela	Implementar módulo de reservas y asignación de asientos	30/10/2025
-Katerine Rodríguez	Mejorar visual del menú y validar datos ingresados	30/10/2025
-José Fernando	Revisar código general y realizar pruebas funcionales	2/11/2025
+  Se acordó que la próxima fase debe concentrarse en:
+  Validaciones de datos ingresados por el usuario.
+  Mejoras visuales del menú principal en consola.
+  Construcción del módulo de estadísticas y administrador.
+  Pruebas preliminares del sistema.
 
 CONCLUSIÓN
 
-Se dio por iniciada oficialmente la fase de programación del sistema “Cine Ágora”. El proyecto ya cuenta con una estructura base sólida y un primer código funcional que servirá como punto de partida para la implementación completa del sistema. Se acordó mantener comunicación constante en caso de errores o actualizaciones necesarias.
+  Se dio por iniciada oficialmente la fase de programación del sistema “Cine Ágora”. El proyecto ya cuenta con una estructura base sólida y un primer código funcional que servirá como punto de partida para la implementación completa del sistema. Se acordó mantener comunicación constante en caso de errores o actualizaciones necesarias.
 
 PRÓXIMA REUNIÓN
 
