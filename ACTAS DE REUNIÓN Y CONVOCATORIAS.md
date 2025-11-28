@@ -351,13 +351,12 @@ El sistema posee una estructura adecuada, ordenada y clara, lo que facilita la d
 
 PRÓXIMA REUNIÓN
 
-Fecha definida: 25 de octubre de 2025.
+Fecha definida: 15 de Noviembre de 2025.
 Temas centrales para tratar:
 
 Realización de pruebas finales del sistema.
 
-Presentación del informe completo en Word.
-
-Preparación de la sustentación oral para exposición en clase.
 
 FIRMA DE LOS PARTICIPANTES
+
+<img width="681" height="364" alt="image" src="https://github.com/user-attachments/assets/42b74e0d-6df5-4974-8a5a-1263cfb14bef" />
