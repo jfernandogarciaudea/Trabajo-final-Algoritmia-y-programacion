@@ -155,7 +155,7 @@ ASISTENTES
 
   3.Katerine Rodríguez Vélez
 
-  4.José Fernando García Galvis (coordinador general del proyecto)
+  4.José Fernando García Galvis 
 
 OBJETIVO GENERAL DE LA REUNIÓN
 
@@ -358,5 +358,179 @@ Realización de pruebas finales del sistema.
 
 
 FIRMA DE LOS PARTICIPANTES
+
+
+
+
+<img width="681" height="364" alt="image" src="https://github.com/user-attachments/assets/42b74e0d-6df5-4974-8a5a-1263cfb14bef" />
+
+
+
+**ACTA DE REUNIÓN – PRESENTACIÓN DEL CÓDIGO DEL SISTEMA “CINEMA ÁGORA”**
+
+Fecha: 20 de Noviembre de 2025
+Hora: 8:00 AM – 10:30 AM
+Modalidad: Reunión virtual por Google Meet
+Lugar: Sala virtual del curso
+Proyecto: Sistema de gestión – Cinema Ágora
+Convocada por: José Fernando García Galvis
+
+ASISTENTES
+
+En la reunión participaron los siguientes integrantes del equipo de trabajo:
+
+José Fernando García Galvis
+
+Carlos Andrés Castañeda Vélez
+
+Eidys Marcela Guzmán Arrieta
+
+Katerine Rodríguez Vélez
+
+OBJETIVO DE LA REUNIÓN
+
+La presente reunión tuvo como finalidad presentar formalmente el código final del sistema de gestión “Cinema Ágora”, revisando su estructura general, los módulos que lo componen, su funcionamiento en consola y la forma en que se integran las distintas partes del programa.
+
+Se buscó validar que el código cumpla con los requerimientos definidos para el proyecto, que su estructura sea entendible, modular y acorde con los objetivos académicos del curso, y que se encuentre en condiciones de ser entregado y sustentado ante el docente.
+
+DESARROLLO DE LA REUNIÓN
+1. Presentación general del sistema
+
+En primer lugar,se realizó una explicación general del sistema Cinema Ágora, destacando que se trata de un programa desarrollado en Python para gestionar:
+
+Registro de usuarios.
+
+Reservación de asientos en una sala de cine.
+
+Cancelación de reservas activas.
+
+Consulta de funciones del fin de semana.
+
+Acceso a un módulo de administración con estadísticas y reportes básicos.
+
+Se confirmó que el sistema opera completamente mediante consola y que está pensado para simular el funcionamiento de un sistema real de reservas de cine, con énfasis en la lógica de programación, estructuras de datos y manejo de información.
+
+2. Estructura general del código presentado
+
+El equipo revisó la estructura global del archivo, identificando las siguientes secciones principales:
+
+Configuraciones iniciales del sistema
+Se definieron listas de filas y columnas para representar los asientos mediante letras; se establecieron los precios de los boletos según tipo de vínculo (estudiantes, docentes, administrativos, oficiales internos y público externo) y se fijaron las credenciales del administrador.
+También se creó la estructura para llevar contadores internos de funciones y reservas.
+
+Estructuras de datos
+Se presentaron los diccionarios y estructuras que almacenan la información principal del sistema, tales como:
+
+Usuarios registrados.
+
+Funciones del cine (día, hora, película, mapa de sillas y cupos disponibles).
+
+Reservaciones generadas.
+
+Relación entre usuarios y sus reservas.
+
+Estadísticas generales asociadas a las reservas y pagos realizados.
+
+Funciones auxiliares
+Se mostraron las funciones utilizadas para:
+
+Generar identificadores consecutivos para reservas y funciones.
+
+Obtener la fecha y hora actual del sistema.
+
+Validar nombres, documentos y entradas vacías.
+
+Inicializar la programación del fin de semana con películas y horarios.
+
+Ordenar funciones por día y hora.
+
+Durante este punto se mencionó el uso de algunas instrucciones de programación, como:
+
+Funciones (def) para modularizar el código.
+
+Diccionarios para agrupar información relacionada.
+
+Bucles (for, while) para recorrer estructuras y mantener el menú activo.
+
+Condicionales (if, elif, else) para la toma de decisiones.
+
+Manejo básico de errores con bloques try / except en algunos ingresos de datos.
+
+3. Módulos funcionales revisados
+
+Se revisaron uno a uno los módulos principales que conforman el sistema:
+
+Módulo de presentación y menú principal:
+Se explicó cómo el sistema imprime un encabezado en consola y muestra un menú con opciones numeradas que permiten al usuario seleccionar entre registrar usuario, registrar reserva, cancelar reserva, consultar funciones, acceder como administrador o salir del sistema.
+
+Módulo de registro de usuarios:
+Se verificó que el programa solicita nombre, apellido, documento y tipo de vínculo, aplica validaciones básicas y registra al usuario solo si los datos son correctos.
+
+Módulo de registro de reservaciones:
+Se presentó la forma en que el usuario ingresa su documento, selecciona una función, visualiza el mapa de asientos (con “O” para disponible y “X” para ocupado) y elige el asiento deseado.
+Se destacó que el sistema actualiza el estado del asiento, guarda la información de la reserva y genera una “boleta” en consola con los datos esenciales.
+
+Módulo de cancelación de reservaciones:
+Se revisó que el sistema permite a un usuario consultar sus reservas activas y elegir una para cancelar. Al hacerlo, el asiento vuelve a quedar disponible y se ajustan las estadísticas de tiquetes vendidos y valor total recaudado.
+
+Módulo de consulta de funciones del fin de semana:
+Se mostró cómo se listan todas las funciones disponibles, ordenadas por día y hora, junto con la cantidad de asientos disponibles por función.
+
+Módulo de administración:
+Se presentó el acceso protegido con usuario y contraseña.
+Desde allí, el administrador puede:
+
+Consultar el total de reservas registradas.
+
+Consultar el total de tiquetes vendidos activos.
+
+Ver el total recaudado.
+
+Calcular el promedio de venta por día.
+
+Listar los usuarios registrados.
+
+Identificar el usuario con más y menos reservas.
+
+Visualizar todas las reservaciones realizadas.
+
+4. Validación de funcionamiento
+
+Durante la reunión se realizaron pruebas básicas sobre el sistema, simulando el flujo real de un usuario:
+
+Registro de un nuevo usuario.
+
+Registro de una reserva sobre una función específica.
+
+Verificación del cambio de estado del asiento.
+
+Cancelación de una reserva activa.
+
+Acceso al módulo administrador para consultar estadísticas actualizadas.
+
+Los resultados fueron satisfactorios y se comprobó que el código presentado cumple con el comportamiento esperado para cada una de las opciones del menú.
+
+ACUERDOS Y COMPROMISOS
+
+Como resultado de la presentación del código, se acordó lo siguiente:
+
+Mantener la versión actual del sistema como código base definitivo para la entrega del proyecto.
+
+Cada integrante conservará una copia actualizada del programa para la sustentación.
+
+Eidys Marcela Guzmán incorporará la descripción general del sistema y de sus módulos en el informe escrito.
+
+Katerine Rodríguez elaborará un diagrama de flujo que represente el funcionamiento global del sistema desde la perspectiva del usuario.
+
+Carlos Andrés Castañeda continuará realizando pruebas adicionales para identificar posibles errores menores antes de la entrega final.
+
+CONCLUSIONES
+
+Se concluyó que el sistema de gestión “Cinema Ágora” se encuentra en una etapa avanzada y estable, con un código funcional, organizado y coherente. La presentación permitió al equipo tener una visión global del programa y dejar constancia del trabajo realizado en cada uno de sus módulos.
+
+El proyecto está listo para entrar en su fase final de documentación y preparación de la sustentación oral ante el docente.
+
+FIRMA DE LOS PARTICIPANTES
+
 
 <img width="681" height="364" alt="image" src="https://github.com/user-attachments/assets/42b74e0d-6df5-4974-8a5a-1263cfb14bef" />
