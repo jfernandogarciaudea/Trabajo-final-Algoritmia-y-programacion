@@ -149,13 +149,13 @@ Proyecto: Sistema de gestión – Cine Ágora
 
 ASISTENTES
 
-  Carlos Andrés Castañeda Vélez
+  1.Carlos Andrés Castañeda Vélez
 
-  Eidys Marcela Guzmán Arrieta
+  2.Eidys Marcela Guzmán Arrieta
 
-  Katerine Rodríguez Vélez
+  3.Katerine Rodríguez Vélez
 
-  José Fernando García Galvis (coordinador general del proyecto)
+  4.José Fernando García Galvis (coordinador general del proyecto)
 
 OBJETIVO GENERAL DE LA REUNIÓN
 
