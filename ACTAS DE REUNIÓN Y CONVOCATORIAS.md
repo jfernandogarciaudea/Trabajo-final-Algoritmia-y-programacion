@@ -243,124 +243,121 @@ FIRMA DE LOS ASISTENTES
 
 **ACTA DE REUNIÓN – DESARROLLO Y CONSOLIDACIÓN DEL SISTEMA “CINEMA ÁGORA”**
 
-Fecha: 8 de Noviembre de 2025
+Fecha: 8 de noviembre de 2025
+
 Hora: 8:00 AM – 11:30 AM
+
 Modalidad: Reunión virtual por Google Meet
+
 Lugar: Sala virtual del curso
+
 Proyecto: Sistema de gestión – Cinema Ágora
+
 Convocada por: José Fernando García Galvis
+
 
 ASISTENTES
 
-  1.José Fernando García Galvis	
-  2.Carlos Andrés Castañeda Vélez
-  3.Eidys Marcela Guzmán
-  4.Katerine Rodríguez Vélez	
+Participaron en la reunión los siguientes integrantes del equipo de desarrollo del sistema:
+
+José Fernando García Galvis
+
+Carlos Andrés Castañeda Vélez
+
+Eidys Marcela Guzmán
+
+Katerine Rodríguez Vélez
 
 OBJETIVO DE LA REUNIÓN
 
-  La presente reunión tuvo como finalidad consolidar la estructura operativa del sistema Cinema Ágora, un programa de gestión de reservas de cine desarrollado en Python. Se avanzó en la definición de los módulos que forman el sistema, la organización del flujo de trabajo, el modelo de interacción con el usuario y la preparación de los elementos necesarios para entregar el proyecto formalmente.
+El propósito central de esta reunión fue consolidar la estructura operativa del sistema de gestión “Cinema Ágora”, construido en el lenguaje Python. Se tomó la decisión de avanzar en la organización interna del programa, la implementación de los módulos principales, la interacción con el usuario mediante consola, y la preparación de los materiales necesarios para presentar el proyecto de manera formal.
 
-  Además, se dejó el sistema funcional en consola, permitiendo registrar usuarios, realizar reservas, cancelar reservas, consultar funciones del fin de semana y acceder a estadísticas administrativas.
+Asimismo, se logró dejar el sistema completamente funcional en consola, permitiendo que el usuario pueda realizar procesos reales como registro, consulta y administración de reservas. La reunión también sirvió para definir los pasos posteriores y la distribución del trabajo.
 
 DESARROLLO DE LA REUNIÓN
 
-1. Revisión de avances anteriores
+1. Revisión de reuniones anteriores
+Se verificó el cumplimiento de los compromisos acordados previamente. Se confirmó que:
 
-Se verificaron los avances obtenidos en reuniones pasadas y se confirmó que:
--El sistema ya permite registrar usuarios con sus datos básicos.
--La carga de funciones del fin de semana quedó completamente implementada.
--El menú principal está operativo y facilita la navegación del usuario.
--El programa está estructurado por módulos, lo que facilita su comprensión y mantenimiento.
+El sistema cuenta con un registro de usuarios activo.
 
-2. Organización del sistema Cinema Ágora
+El cargue de funciones del fin de semana está finalizado.
 
-Se decidió estructurar oficialmente el sistema en secciones claras, de la siguiente manera:
+El menú principal permite la navegación adecuada.
 
-Configuraciones iniciales.
+La programación se encuentra organizada por módulos, lo que facilita la comprensión y el mantenimiento.
 
-Definición de estructuras de datos.
+2. Organización definitiva del sistema
+Se definió que el sistema estará estructurado en secciones claras, entre ellas:
 
-Funciones auxiliares.
+Configuraciones iniciales del programa.
 
-Registro de usuarios y reservas.
+Creación de estructuras de datos necesarias para la gestión.
 
-Cancelación de reservas.
+Funciones auxiliares para manejo y validación de información.
 
-Visualización de funciones.
+Registro de usuarios y reserva de asientos.
 
-Panel de administración.
+Cancelación de reservas activas.
 
-Programa principal con menú.
+Visualización detallada de funciones y películas disponibles.
 
-Esta organización permitirá documentar el proyecto de forma profesional y facilitar su explicación ante el docente o jurado evaluador.
+Panel administrativo con estadísticas y seguimiento.
 
-3. Funcionalidades que quedaron operativas
+Ejecución del programa a través del menú principal.
 
-Durante la sesión se lograron integrar y confirmar las siguientes funcionalidades del sistema:
+Este esquema permite seguir una secuencia lógica, sostenible y adecuada para ser presentada en evaluaciones académicas.
 
-✔ Registro de usuario
-Se ingresan los datos básicos y se valida la información antes de guardarla.
+3. Funcionalidades consolidadas durante la sesión
+Se lograron integrar y comprobar las siguientes funciones del sistema:
 
-✔ Reserva de boletos de cine
-El sistema muestra un mapa de asientos, registra reservas y actualiza los cupos disponibles.
+Registro correcto de usuario con validaciones.
 
-✔ Cancelación de reservas
-Las reservas activas pueden ser anuladas y el asiento vuelve a quedar libre.
+Reserva de boletos con mapa de asientos e indicadores disponibles/ocupados.
 
-✔ Mostrar funciones del fin de semana
-Las películas están clasificadas por día y hora para una mejor visualización del cliente.
+Cancelación de reservas con actualización inmediata del estado del asiento.
 
-✔ Módulo de administración
-Se puede acceder mediante Usuario y Contraseña para consultar:
+Visualización de todas las funciones del fin de semana.
 
-Total de reservas realizadas
+Acceso a un módulo administrativo protegido con usuario y contraseña.
 
-Total de tiquetes vendidos
+Visualización de estadísticas como total de reservas, tiquetes vendidos, total pagado y promedio de venta diaria.
 
-Total recaudado en ventas activas
+Identificación del usuario con mayor y menor cantidad de reservas.
 
-Promedio de venta por día
+Historial completo de reservas realizadas.
 
-Lista de usuarios registrados
+Se dejó en funcionamiento un menú principal completamente operativo que permite la interacción fluida con el sistema.
 
-Usuario con mayor y menor número de reservas
+ACUERDOS Y RESPONSABILIDADES
 
-Historial completo de reservas
+Se distribuyeron tareas concretas para continuar el desarrollo del proyecto:
 
-✔ Menú principal 100% funcional
-Se dejó completamente operativo el menú de navegación en consola, lo que permite la interacción fluida con el sistema.
+Carlos Andrés Castañeda Vélez realizará las pruebas funcionales completas del sistema y validará su funcionamiento general.
 
-ACUERDOS Y TAREAS ASIGNADAS
-Integrante	Responsabilidad	Fecha límite
-Carlos Andrés Castañeda	Realizar pruebas funcionales completas	23/10/2025
-Eidys Marcela Guzmán	Redactar informe final en Word	23/10/2025
-Katerine Rodríguez	Elaborar diagrama de flujo del sistema	24/10/2025
-José Fernando García Galvis	Revisar y validar el trabajo final	25/10/2025
+Eidys Marcela Guzmán se encargará de redactar el informe final en Word con los apartados requeridos.
 
-Se acordó que los resultados de estas tareas serán compartidos antes de la próxima reunión para consolidarlos en un único documento final.
+Katerine Rodríguez Vélez trabajará en el diseño del diagrama de flujo del sistema.
 
-CONCLUSIONES DE LA REUNIÓN
+José Fernando García Galvis revisará el proyecto completo y validará el material final para la entrega académica.
 
-Se logró avanzar de manera significativa en la consolidación del sistema Cinema Ágora.
+Se acordó que los avances serán compartidos antes de la próxima reunión para unificar toda la información en un solo documento definitivo.
 
-El programa se encuentra en condiciones de ser probado por usuarios simulados.
+CONCLUSIONES
 
-El sistema posee una estructura adecuada para ser presentado como proyecto final.
+Durante esta reunión se evidenció un avance significativo en el desarrollo del sistema “Cinema Ágora”. El programa ya puede ser utilizado por un usuario simulado y se encuentra casi listo para ser sustentado formalmente. La organización del equipo y la comunicación constante han permitido el cumplimiento de cada una de las fases planteadas desde el inicio del proyecto.
 
-El trabajo en equipo permitió cumplir los objetivos planteados en cada fase.
-
-Se dejó el programa ordenado, entendible y listo para ser documentado.
+El sistema posee una estructura adecuada, ordenada y clara, lo que facilita la documentación y la presentación final del trabajo académico. Se quedó en condiciones de iniciar la etapa de pruebas, elaboración del informe y preparación de la sustentación.
 
 PRÓXIMA REUNIÓN
 
-Fecha: 25 de octubre de 2025
-Tema principal:
+Fecha definida: 25 de octubre de 2025.
+Temas centrales para tratar:
 
-Pruebas finales del sistema
+Realización de pruebas finales del sistema.
 
-Entrega del informe en Word
+Presentación del informe completo en Word.
 
-Preparación de sustentación (exposición en clase)
+Preparación de la sustentación oral para exposición en clase.
 
 FIRMA DE LOS PARTICIPANTES
