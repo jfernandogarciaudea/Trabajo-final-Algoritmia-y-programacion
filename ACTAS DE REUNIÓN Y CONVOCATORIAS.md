@@ -12,7 +12,7 @@ Dirigido a:
 
 Estimados Compañeros, 
 Por medio de la presente, se les convoca a la primera reunión del equipo de trabajo para el proyecto final de Algoritmia y Programación.
-Esta reunión se llevará a cabo el día Domingo 7 de septiembre del 2025 a las 4:00 PM, a través de la plataforma Meet, por medio del siguiente enlace https://meet.google.com/nsf-ksdw-gyv. 
+Esta reunión se llevará a cabo el día Domingo 7 de septiembre del 2025 a las 4:00 PM, a través de la plataforma Meet. 
 El objetivo de esta reunión es:
 1.	Revisar el instructivo del trabajo.
 2.	Explorar el GitHub y compartir el proyecto con todos.
@@ -85,7 +85,7 @@ Dirigido a:
 Estimados Compañeros,
 
 Por medio de la presente, se les convoca a una segunda reunión del equipo de trabajo para el proyecto final de Algoritmia y Programación.
-Esta reunión se llevará a cabo el día Sábado 27 de septiembre del 2025 a las 8:00 AM, a través de la plataforma Meet, por medio del siguiente enlace https://meet.google.com/nbp-nfvc-vxd.
+Esta reunión se llevará a cabo el día Sábado 27 de septiembre del 2025 a las 8:00 AM, a través de la plataforma Meet.
 
 El objetivo de esta reunión es:
 1.	Revisar el cumplimiento de los compromisos propuestos en la reunión anterior.
@@ -244,7 +244,7 @@ FIRMA DE LOS ASISTENTES
 
 Fecha: 8 de noviembre de 2025
 
-Hora: 8:00 AM – 11:30 AM
+Hora: 8:00 AM – 12:30 PM
 
 Modalidad: Reunión virtual por Google Meet
 
