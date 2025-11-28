@@ -352,6 +352,8 @@ FIRMA DE LOS PARTICIPANTES
 
 La reunión fue pospuesta para el día 20/11/2025 debido a la disponibilidad de los integrantes del equipo, y esta nueva fecha permitirá que todos participen y presenten sus avances.
 
+
+
 **ACTA DE REUNIÓN – PRESENTACIÓN DEL CÓDIGO DEL SISTEMA “CINEMA ÁGORA”**
 
 Fecha: 20 de Noviembre de 2025
