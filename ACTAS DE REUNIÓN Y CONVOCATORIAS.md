@@ -123,9 +123,10 @@ Compromisos:
 1. Fecha de entrega de las actividades faltantes: Todos los miembros del equipo deben enviar las actividades asignadas a más tardar el día lunes 29/09/2025 para así revisar y organizar todo antes de la fecha de la entrega. 
 2. Asignación de las actividades faltantes:
 - Katerine: Hacer el reporte de visión
-Carlos: Hacer especificación de requisitos
-José Fernando: Hacer el plan de proyecto
-Eidys: Plasmar la convocatoria de las reuniones realizadas y hacer acta de esta reunión.
+- Carlos: Hacer especificación de requisitos
+- José Fernando: Hacer el plan de proyecto
+- Eidys: Plasmar la convocatoria de las reuniones realizadas y hacer acta de esta reunión.
+
 Próxima Reunión: La próxima reunión se acordó para el día Martes 30/09/2025, aun queda por definir la hora de esta reunión.
 
 Se da por concluida la reunión con la expectativa de avanzar en los compromisos establecidos y mantener una comunicación fluida para el éxito del proyecto.
