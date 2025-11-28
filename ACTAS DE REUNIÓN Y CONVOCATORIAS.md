@@ -362,11 +362,11 @@ La reunión fue pospuesta para el día 20/11/2025 debido a la disponibilidad de 
 
 **ACTA DE REUNIÓN – PRESENTACIÓN DEL CÓDIGO DEL SISTEMA “CINEMA ÁGORA”**
 
-Fecha: 20 de Noviembre de 2025
-Hora: 8:00 AM – 10:30 AM
-Modalidad: Reunión virtual por Google Meet
-Proyecto: Sistema de gestión – Cinema Ágora
-Convocada por: José Fernando García Galvis
+- Fecha: 20 de Noviembre de 2025
+- Hora: 8:00 AM – 10:30 AM
+- Modalidad: Reunión virtual por Google Meet
+- Proyecto: Sistema de gestión – Cinema Ágora
+- Convocada por: José Fernando García Galvis
 
 ASISTENTES
 
