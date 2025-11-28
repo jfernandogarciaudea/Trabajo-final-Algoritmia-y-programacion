@@ -29,6 +29,8 @@ Con el fin de asegurar una colaboración efectiva, promover un ambiente de armon
 * Eidys Marcela Guzman Arrieta: Debe realizar el acta de colaboracion, acta de la segunda reunion, y las actas de convocatoria a las reuniones realizadas.
 Todos los miembros del equipo deben pensar en un nombre para el cinema y tambien deben redactar las expectativas que tienen del proyecto para plasmarlas el Acta de Entendimiento.
 
+Para la segunda entrega todos los miembros deben aportar en reuniones y con trabajo por fuera para el correcto desarrollo del codigo del programa.
+
 CRONOGRAMA
 
 La primera entrega se divide en 2 fases:
