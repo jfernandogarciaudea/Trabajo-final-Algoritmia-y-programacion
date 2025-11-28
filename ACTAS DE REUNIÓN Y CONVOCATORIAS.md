@@ -137,6 +137,7 @@ Firma de los asistentes:
 
 
 
+
 **ACTA DE REUNIÓN – INICIO DE DESARROLLO DEL SISTEMA “CINE ÁGORA”**
 
 Fecha: 25 de octubre de 2025
@@ -239,6 +240,8 @@ Tema central: Revisión del avance del código y pruebas básicas de funcionamie
 
 FIRMA DE LOS ASISTENTES
 <img width="681" height="364" alt="image" src="https://github.com/user-attachments/assets/cf9a559d-d01a-48a1-a2d2-4cbfda43d621" />
+
+
 
 
 **ACTA DE REUNIÓN – DESARROLLO Y CONSOLIDACIÓN DEL SISTEMA “CINEMA ÁGORA”**
@@ -350,7 +353,10 @@ FIRMA DE LOS PARTICIPANTES
 <img width="681" height="364" alt="image" src="https://github.com/user-attachments/assets/42b74e0d-6df5-4974-8a5a-1263cfb14bef" />
 
 
+
+
 La reunión fue pospuesta para el día 20/11/2025 debido a la disponibilidad de los integrantes del equipo, y esta nueva fecha permitirá que todos participen y presenten sus avances.
+
 
 
 
@@ -519,6 +525,8 @@ FIRMA DE LOS PARTICIPANTES
 
 
 <img width="681" height="364" alt="image" src="https://github.com/user-attachments/assets/42b74e0d-6df5-4974-8a5a-1263cfb14bef" />
+
+
 
 
 El trabajo quedó oficialmente finalizado el día 28/11/2025 en horas de la mañana, luego de realizarse las últimas revisiones. A partir de esa fecha, el código y su funcionamiento quedaron completamente definidos y operativos, quedando listo para su entrega y sustentación.
